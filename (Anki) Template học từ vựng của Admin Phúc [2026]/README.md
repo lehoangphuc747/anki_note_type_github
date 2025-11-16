@@ -11,26 +11,26 @@ Template Anki chuyên nghiệp cho việc học từ vựng với 4 loại card 
 ### Card 1 - Từ vựng cơ bản
 - **[1_1_CARD_1_FRONT.html](./1_1_CARD_1_FRONT.html)** - Mặt trước Card 1
 - **[1_2_CARD_1_BACK.html](./1_2_CARD_1_BACK.html)** - Mặt sau Card 1 (có typing)
-- **[1_3_CARD_1_FRONT_RENDER_IN_HTML.html](./1_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước
-- **[1_4_CARD_1_BACK_RENDER_IN_HTML.html](./1_4_CARD_1_BACK_RENDER_IN_HTML.html)** - Preview mặt sau
+- **[1_3_CARD_1_FRONT_RENDER_IN_HTML.html](./1_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_3_CARD_1_FRONT_RENDER_IN_HTML.html)
+- **[1_4_CARD_1_BACK_RENDER_IN_HTML.html](./1_4_CARD_1_BACK_RENDER_IN_HTML.html)** - Preview mặt sau [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_4_CARD_1_BACK_RENDER_IN_HTML.html)
 
 ### Card 2 - Từ vựng nâng cao
 - **[2_1_CARD_2_FRONT.html](./2_1_CARD_2_FRONT.html)** - Mặt trước Card 2
 - **[2_2_CARD_2_BACK.html](./2_2_CARD_2_BACK.html)** - Mặt sau Card 2
-- **[2_3_CARD_2_FRONT_RENDER_IN_HTML.html](./2_3_CARD_2_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước
-- **[2_4_CARD_2_BACK_RENDER_IN_HTML.html](./2_4_CARD_2_BACK_RENDER_IN_HTML.html)** - Preview mặt sau
+- **[2_3_CARD_2_FRONT_RENDER_IN_HTML.html](./2_3_CARD_2_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/2_3_CARD_2_FRONT_RENDER_IN_HTML.html)
+- **[2_4_CARD_2_BACK_RENDER_IN_HTML.html](./2_4_CARD_2_BACK_RENDER_IN_HTML.html)** - Preview mặt sau [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/2_4_CARD_2_BACK_RENDER_IN_HTML.html)
 
 ### Card 3 - Câu ví dụ (Immersive)
 - **[3_1_CARD_3_FRONT.HTML](./3_1_CARD_3_FRONT.HTML)** - Mặt trước Card 3
 - **[3_2_CARD_3_BACK.HTML](./3_2_CARD_3_BACK.HTML)** - Mặt sau Card 3
-- **[3_3_CARD_1_FRONT_RENDER_IN_HTML.html](./3_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước
-- **[3_4_CARD_3_BACK_RENDER_IN_HTML.html](./3_4_CARD_3_BACK_RENDER_IN_HTML.html)** - Preview mặt sau
+- **[3_3_CARD_1_FRONT_RENDER_IN_HTML.html](./3_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/3_3_CARD_1_FRONT_RENDER_IN_HTML.html)
+- **[3_4_CARD_3_BACK_RENDER_IN_HTML.html](./3_4_CARD_3_BACK_RENDER_IN_HTML.html)** - Preview mặt sau [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/3_4_CARD_3_BACK_RENDER_IN_HTML.html)
 
 ### Card 4 - Gõ câu ví dụ
 - **[4_1_CARD_4_FRONT.HTML](./4_1_CARD_4_FRONT.HTML)** - Mặt trước Card 4
 - **[4_2_CARD_4_BACK.HTML](./4_2_CARD_4_BACK.HTML)** - Mặt sau Card 4 (có typing)
-- **[4_3_CARD_4_FRONT_RENDER_IN_HTML.html](./4_3_CARD_4_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước
-- **[4_4_CARD_4_BACK_RENDER_IN_HTML.html](./4_4_CARD_4_BACK_RENDER_IN_HTML.html)** - Preview mặt sau
+- **[4_3_CARD_4_FRONT_RENDER_IN_HTML.html](./4_3_CARD_4_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/4_3_CARD_4_FRONT_RENDER_IN_HTML.html)
+- **[4_4_CARD_4_BACK_RENDER_IN_HTML.html](./4_4_CARD_4_BACK_RENDER_IN_HTML.html)** - Preview mặt sau [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/4_4_CARD_4_BACK_RENDER_IN_HTML.html)
 
 ### Styling
 - **[STYLING.CSS](./STYLING.CSS)** - File CSS chung cho tất cả các card
