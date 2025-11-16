@@ -12,13 +12,13 @@ Template Anki chuyên nghiệp cho việc học từ vựng với 4 loại card 
 
 ## 📋 Danh sách files
 
-### Card 1 - Từ vựng cơ bản
+### Card 1 - Điền từ vựng
 - **[1_1_CARD_1_FRONT.html](./1_1_CARD_1_FRONT.html)** - Mặt trước Card 1
 - **[1_2_CARD_1_BACK.html](./1_2_CARD_1_BACK.html)** - Mặt sau Card 1 (có typing)
 - **[1_3_CARD_1_FRONT_RENDER_IN_HTML.html](./1_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_3_CARD_1_FRONT_RENDER_IN_HTML.html)
 - **[1_4_CARD_1_BACK_RENDER_IN_HTML.html](./1_4_CARD_1_BACK_RENDER_IN_HTML.html)** - Preview mặt sau [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_4_CARD_1_BACK_RENDER_IN_HTML.html)
 
-### Card 2 - Từ vựng nâng cao
+### Card 2 - Review ghi nhớ nghĩa
 - **[2_1_CARD_2_FRONT.html](./2_1_CARD_2_FRONT.html)** - Mặt trước Card 2
 - **[2_2_CARD_2_BACK.html](./2_2_CARD_2_BACK.html)** - Mặt sau Card 2
 - **[2_3_CARD_2_FRONT_RENDER_IN_HTML.html](./2_3_CARD_2_FRONT_RENDER_IN_HTML.html)** - Preview mặt trước [[XEM THỬ]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/2_3_CARD_2_FRONT_RENDER_IN_HTML.html)

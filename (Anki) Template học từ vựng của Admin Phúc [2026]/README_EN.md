@@ -12,13 +12,13 @@ Professional Anki template for vocabulary learning with 4 different card types.
 
 ## 📋 File List
 
-### Card 1 - Basic Vocabulary
+### Card 1 - Fill in Vocabulary
 - **[1_1_CARD_1_FRONT.html](./1_1_CARD_1_FRONT.html)** - Card 1 Front
 - **[1_2_CARD_1_BACK.html](./1_2_CARD_1_BACK.html)** - Card 1 Back (with typing)
 - **[1_3_CARD_1_FRONT_RENDER_IN_HTML.html](./1_3_CARD_1_FRONT_RENDER_IN_HTML.html)** - Front preview [[PREVIEW]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_3_CARD_1_FRONT_RENDER_IN_HTML.html)
 - **[1_4_CARD_1_BACK_RENDER_IN_HTML.html](./1_4_CARD_1_BACK_RENDER_IN_HTML.html)** - Back preview [[PREVIEW]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/1_4_CARD_1_BACK_RENDER_IN_HTML.html)
 
-### Card 2 - Advanced Vocabulary
+### Card 2 - Review & Memorize Meaning
 - **[2_1_CARD_2_FRONT.html](./2_1_CARD_2_FRONT.html)** - Card 2 Front
 - **[2_2_CARD_2_BACK.html](./2_2_CARD_2_BACK.html)** - Card 2 Back
 - **[2_3_CARD_2_FRONT_RENDER_IN_HTML.html](./2_3_CARD_2_FRONT_RENDER_IN_HTML.html)** - Front preview [[PREVIEW]](https://raw.githack.com/lehoangphuc747/anki_note_type_github/main/(Anki)%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/2_3_CARD_2_FRONT_RENDER_IN_HTML.html)
