@@ -1,6 +1,6 @@
 <html class="win chrome" dir="ltr" data-bs-theme="light"><head>
     <title>card layout</title>
-<base href="http://127.0.0.1:3390/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:3390/_anki/css/webview.css"><style>
+<base href="http://127.0.0.1:9874/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/webview.css"><style>
 body { zoom: 1; background-color: var(--canvas); }
 html { font-family:"Segoe UI"; }
 
@@ -8,7 +8,7 @@ button { font-family: "Segoe UI"; }
             
 :root { --canvas: #f5f5f5 }
 :root[class*=night-mode] { --canvas: #2c2c2c }
-</style><link rel="stylesheet" type="text/css" href="http://127.0.0.1:3390/_anki/css/reviewer.css">
+</style><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/reviewer.css">
 <style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
 .CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
 .CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
@@ -401,10 +401,10 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 </style></head>
 
 <body class="card card2 isWin">
-<script src="http://127.0.0.1:3390/_anki/js/webview.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/mathjax.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/vendor/mathjax/tex-chtml-full.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/reviewer.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/webview.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/mathjax.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/vendor/mathjax/tex-chtml-full.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/reviewer.js"></script>
 
 <div id="_mark" hidden="">★</div>
 <div id="_flag" hidden="">⚑</div>
@@ -625,17 +625,13 @@ body.card.nightMode .card-container {
     line-height: 1.5;
     padding-top: 8px;
     border-top: 1px solid #E9ECEF;
-    text-align: left;
+    text-align: center;
 }
 
 .nightMode .giaithich {
     color: #CCCCCC;
     border-top-color: #3A3A3A;
 }
-
-/* Hint (giải thích): front căn giữa, back căn trái */
-.card-container.card-front .giaithich { text-align: center; }
-.card-container.card-back .giaithich { text-align: left; }
 
 /* ------------------------------------
    HINT / EXPLAIN TOGGLE (a.hint + div.hint)
@@ -677,18 +673,9 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Nghĩa căn trái */
-.nghia { text-align: left; }
-
-/* Card 1 (mặt trước): Nghĩa căn giữa */
-.card-container.card-front .nghia { text-align: center; }
-
-/* Mặt sau: Nghĩa luôn căn trái */
-.card-container.card-back .nghia { text-align: left; }
-
 .nightMode a.hint { color: #FF6B9D; }
 .nightMode a.hint:hover { background: rgba(255,107,157,0.12); color: #ff82aa; }
-.nightMode a.hint:focus-visible { outline-color: rgba(255,107,157,0.45); }
+.nightMode a.hint:focus-visible { outline-color: rgba(11, 9, 10, 0.45); }
 .nightMode div.hint {
     background: rgba(255,107,157,0.08);
     border-color: rgba(255,107,157,0.5);
@@ -740,7 +727,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container {
     margin: 0;
     padding: 16px;
-    text-align: left;
+    text-align: center;
     background: #FFFFFF;
     border: 1px solid #E9ECEF;
     border-left: 4px solid #E91E63;
@@ -751,6 +738,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container .vidu-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2px;
     margin-bottom: 8px;
 }
@@ -806,6 +794,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     font-weight: 400;
     color: #495057;
     line-height: 1.5;
+    text-align: center;
 }
 
 /* Night Mode */
@@ -1385,10 +1374,10 @@ body.isWin.android .mobile-type-hint {
     width: 8px;
 }
 
-/* Ký tự đúng - real-time */
+/* Ký tự đúng - real-time - Màu đậm hơn, giữ background và border */
 .typeans-display .typeGood,
 .typeans-overlay .typeGood {
-    color: #14C38E;
+    color: #00796B;
     background-color: #B6FFCE;
     border: 1px solid #A3CFBB;
     padding: 2px 4px;
@@ -1398,20 +1387,24 @@ body.isWin.android .mobile-type-hint {
 
 .nightMode .typeans-display .typeGood,
 .nightMode .typeans-overlay .typeGood {
-    color: #6BCF8F;
+    color: #4DB6AC;
     background-color: rgba(107, 207, 143, 0.15);
     border-color: rgba(107, 207, 143, 0.3);
 }
 
-/* Ký tự sai - real-time */
+/* Ký tự sai - real-time - Màu đậm hơn, giữ background và border, thêm underline */
 .typeans-display .typeBad,
 .typeans-overlay .typeBad {
-    color: #FF6363;
-    background-color: #FCFFC9;
+    color: #C62828;
+    background-color: #FFE4C0;
     border: 1px solid #FFD4A3;
     padding: 2px 4px;
     border-radius: 4px;
     font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 /* Ký tự nhập thừa (vàng) */
@@ -1435,9 +1428,10 @@ body.isWin.android .mobile-type-hint {
 
 .nightMode .typeans-display .typeBad,
 .nightMode .typeans-overlay .typeBad {
-    color: #FF6B6B;
+    color: #E57373;
     background-color: rgba(255, 107, 107, 0.15);
-    border-color: rgba(255, 107, 107, 0.3);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
 }
 
 .nightMode .typeans-display .typeExtra,
@@ -1502,47 +1496,58 @@ body.isWin.android .mobile-type-hint {
     transition: all 0.15s ease;
 }
 
-/* Ký tự ĐÚNG - Màu xanh với background xanh nhạt */
+/* Ký tự ĐÚNG - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeGood {
-    color: #14C38E;
+    color: #00796B;
     background-color: #B6FFCE;
     border: 1px solid #A3CFBB;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .nightMode #typeans .typeGood {
-    color: #6BCF8F;
+    color: #4DB6AC;
     background-color: rgba(107, 207, 143, 0.15);
     border-color: rgba(107, 207, 143, 0.3);
 }
 
-/* Ký tự SAI - Màu đỏ với background đỏ nhạt */
+/* Ký tự SAI - Màu đậm hơn, giữ background và border, thêm underline - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeBad {
-    color: #FF6363;
+    color: #C62828;
     background-color: #FFE4C0;
     border: 1px solid #FFD4A3;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 .nightMode #typeans .typeBad {
-    color: #FF6B6B;
+    color: #E57373;
     background-color: rgba(255, 107, 107, 0.15);
     border-color: rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
 }
 
-/* Ký tự BỎ SÓT - Màu xanh dương với background xanh dương nhạt */
+/* Ký tự BỎ SÓT - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeMissed,
 #typeans .typePass {
-    color: #0D6EFD;
+    color: #1E88E5;
     background-color: #D6F4ED;
     border: 1px solid #9EC5FE;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
     text-decoration: underline;
 }
 
 .nightMode #typeans .typeMissed,
 .nightMode #typeans .typePass {
-    color: #6BA3FF;
+    color: #64B5F6;
     background-color: rgba(107, 163, 255, 0.15);
     border-color: rgba(107, 163, 255, 0.3);
 }
@@ -1675,6 +1680,7 @@ body.isWin.android .mobile-type-hint {
     border-top: 1px solid #E9ECEF;
     color: #E91E63;
     font-weight: 500;
+    text-align: center;
 }
 
 .nightMode .collapsible-section {
@@ -2106,6 +2112,12 @@ body.card3 {
     min-height: 95vh;
     padding: 20px;
     box-sizing: border-box;
+    background: #F8F9FA; /* Nền xám nhạt */
+}
+
+/* Night Mode cho Card 3 */
+body.nightMode.card3 {
+    background: #1A1A1A; /* Nền tối cho night mode */
 }
 
 /* Ghi đè container mặc định để nó trong suốt và không có viền */
@@ -2516,7 +2528,7 @@ body.card4 {
 /* Cho container chính chiếm đúng chiều rộng mong muốn và tự căn giữa */
 body.card4 .card-container.immersive-container {
     width: 90vw;       /* << LUÔN RỘNG 90% MÀN HÌNH */
-    max-width: 1100px; /* << NHƯNG KHÔNG QUÁ 1100PX */
+    max-width: 1400px; /* << NHƯNG KHÔNG QUÁ 1100PX */
     margin: 0;
     padding: 0;
     border: none;
@@ -2649,7 +2661,7 @@ body.card4 {
 
 body.card4 .card-container.immersive-container {
     width: 90vw;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0;
     padding: 0;
     border: none;
@@ -2765,18 +2777,15 @@ body.card4 .review-container {
     box-sizing: border-box;
 }
 
-/* Khối so sánh gõ chữ */
-body.card4 #typing-result {
+/* Khối so sánh gõ chữ - Card 4 dùng chung #typeans với Card 1 */
+body.card4 #typeans {
     font-size: 1.8rem;
     line-height: 1.7;
     word-break: break-word;
     font-weight: 500;
 }
-body.card4 #typing-result .typeGood { color: #00796B; font-weight: 700; }
-body.card4 #typing-result .typeBad { color: #C62828; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-body.card4 #typing-result .typeMissed { color: #1E88E5; font-weight: 700; }
-body.card4 #typing-result > div,
-body.card4 #typing-result code { font-family: inherit !important; font-size: inherit !important; }
+body.card4 #typeans > div,
+body.card4 #typeans code { font-family: inherit !important; font-size: inherit !important; }
 
 /* Đường kẻ phân cách */
 body.card4 .review-divider {
@@ -2816,9 +2825,7 @@ body.card4 .review-container .nghiavidu {
 
 /* --- NIGHT MODE --- */
 .nightMode body.card4 .review-container { background: #2A2A2A; border-color: #3A3A3A; }
-.nightMode body.card4 #typing-result .typeGood { color: #4DB6AC; }
-.nightMode body.card4 #typing-result .typeBad { color: #E57373; }
-.nightMode body.card4 #typing-result .typeMissed { color: #64B5F6; }
+/* Card 4 dùng chung CSS với Card 1 cho #typeans */
 .nightMode body.card4 .review-divider { border-top-color: #3A3A3A; }
 .nightMode body.card4 .review-container .nghiavidu { color: #BDBDBD; }</style><div class="card-container card-back">
 
@@ -2842,12 +2849,12 @@ body.card4 .review-container .nghiavidu {
   
       <!-- Từ vựng -->
       <div class="tuvung">
-        가입자
+        매직기로 머리를 펴다
   
         <!-- Phienam, loaitu, sound cùng hàng -->
         <div class="word-meta-row">
           
-          <div class="loaitu">Danh từ</div>
+          <div class="loaitu">động từ</div>
           
 
           
@@ -2864,9 +2871,9 @@ body.card4 .review-container .nghiavidu {
   
       <!-- Nghĩa -->
       <div class="nghia">
-        người đăng ký
+        duỗi tóc bằng máy duỗi
         
-        <div class="giaithich"><p>Người đã đăng ký để sử dụng một dịch vụ hoặc trở thành thành viên.</p></div>
+        <div class="giaithich"><p>Làm tóc thẳng hoàn toàn bằng máy duỗi nhiệt.</p></div>
         
       </div>
     </div>
@@ -2875,7 +2882,7 @@ body.card4 .review-container .nghiavidu {
       
       <div class="vidu-container">
         <div class="vidu-row">
-          <div class="vidu"><p>이 통신사 <strong>가입자</strong>는 천만 명이 넘습니다.</p></div>
+          <div class="vidu"><p>저는 <strong>매직기로 머리를 폈어요</strong>.</p></div>
           <div class="sound" aria-label="Phát âm ví dụ">
 <a class="replay-button soundLink" href="#" onclick="pycmd('play:a:2'); return false;" draggable="false">
     <svg class="playImage" viewBox="0 0 64 64" version="1.1">
@@ -2884,30 +2891,15 @@ body.card4 .review-container .nghiavidu {
     </svg>
 </a></div>
         </div>
-        <div class="nghiavidu"><p>Số <strong>người đăng ký</strong> của nhà mạng này đã vượt quá 10 triệu người.</p></div>
+        <div class="nghiavidu"><p>Tôi <strong>duỗi tóc bằng máy duỗi</strong>.</p></div>
       </div>
       
       
       <!-- CẬP NHẬT: Các mục thông tin có thể thu gọn -->
       
-      <details class="collapsible-section">
-        <summary>Cụm từ đi kèm</summary>
-        <div class="collapsible-content"><p>신규 가입자 (người đăng ký mới), 기존 가입자 (người đăng ký cũ)</p></div>
-      </details>
-      
   
       
-      <details class="collapsible-section">
-        <summary>Đồng nghĩa</summary>
-        <div class="collapsible-content"><p>회원 (hội viên), 구독자 (người đăng ký theo dõi)</p></div>
-      </details>
-      
   
-      
-      <details class="collapsible-section">
-        <summary>Trái nghĩa</summary>
-        <div class="collapsible-content"><p>탈퇴자 (người hủy đăng ký)</p></div>
-      </details>
       
   
       <!-- Hình ảnh -->
@@ -2916,8 +2908,8 @@ body.card4 .review-container .nghiavidu {
     <header class="card-header">
       <span class="tag1">TOPIK</span>
       <span class="tag2">&gt; 2000_TỪ</span>
-      <span class="tag3">&gt; 고객센터</span>
-      <span class="tag4">&gt; 명사</span>
+      <span class="tag3">&gt; 미용실</span>
+      <span class="tag4">&gt; </span>
     </header>
 
     <!-- Footer -->

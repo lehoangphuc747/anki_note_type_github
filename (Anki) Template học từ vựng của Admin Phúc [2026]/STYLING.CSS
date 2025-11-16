@@ -31,7 +31,7 @@ body.nightMode {
     /* ======================= */
     
     margin: 16px auto;
-    padding: 20px;
+    padding: 12px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -214,17 +214,13 @@ body.card.nightMode .card-container {
     line-height: 1.5;
     padding-top: 8px;
     border-top: 1px solid #E9ECEF;
-    text-align: left;
+    text-align: center;
 }
 
 .nightMode .giaithich {
     color: #CCCCCC;
     border-top-color: #3A3A3A;
 }
-
-/* Hint (giải thích): front căn giữa, back căn trái */
-.card-container.card-front .giaithich { text-align: center; }
-.card-container.card-back .giaithich { text-align: left; }
 
 /* ------------------------------------
    HINT / EXPLAIN TOGGLE (a.hint + div.hint)
@@ -266,18 +262,9 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Nghĩa căn trái */
-.nghia { text-align: left; }
-
-/* Card 1 (mặt trước): Nghĩa căn giữa */
-.card-container.card-front .nghia { text-align: center; }
-
-/* Mặt sau: Nghĩa luôn căn trái */
-.card-container.card-back .nghia { text-align: left; }
-
 .nightMode a.hint { color: #FF6B9D; }
 .nightMode a.hint:hover { background: rgba(255,107,157,0.12); color: #ff82aa; }
-.nightMode a.hint:focus-visible { outline-color: rgba(255,107,157,0.45); }
+.nightMode a.hint:focus-visible { outline-color: rgba(11, 9, 10, 0.45); }
 .nightMode div.hint {
     background: rgba(255,107,157,0.08);
     border-color: rgba(255,107,157,0.5);
@@ -329,7 +316,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container {
     margin: 0;
     padding: 16px;
-    text-align: left;
+    text-align: center;
     background: #FFFFFF;
     border: 1px solid #E9ECEF;
     border-left: 4px solid #E91E63;
@@ -340,6 +327,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container .vidu-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2px;
     margin-bottom: 8px;
 }
@@ -395,6 +383,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     font-weight: 400;
     color: #495057;
     line-height: 1.5;
+    text-align: center;
 }
 
 /* Night Mode */
@@ -1251,28 +1240,16 @@ body.isWin.android .mobile-type-hint {
 }
 
 .collapsible-section summary {
-    display: flex;
-    align-items: center;
     padding: 14px 16px;
     cursor: pointer;
     outline: none;
     font-weight: 600;
     color: #495057;
+    text-align: center;
 }
 
 .collapsible-section summary::marker {
     display: none;
-}
-
-.collapsible-section summary::before {
-    content: '▶';
-    font-size: 0.7em;
-    margin-right: 10px;
-    transition: transform 0.2s ease-in-out;
-}
-
-.collapsible-section[open] > summary::before {
-    transform: rotate(90deg);
 }
 
 .collapsible-content {
@@ -1280,6 +1257,7 @@ body.isWin.android .mobile-type-hint {
     border-top: 1px solid #E9ECEF;
     color: #E91E63;
     font-weight: 500;
+    text-align: center;
 }
 
 .nightMode .collapsible-section {
@@ -1296,6 +1274,52 @@ body.isWin.android .mobile-type-hint {
 
 .collocation-label, .synonym-label, .antonym-label { display: none; }
 .collocation-value, .synonym-value, .antonym-value { display: block; }
+
+/* Style cho các phần trong box "Mở rộng" */
+.related-item {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E9ECEF;
+}
+
+/* Tăng khoảng cách phía trên "Cụm từ đi kèm" (phần đầu tiên) */
+.collapsible-content > .related-item:first-child {
+    margin-top: 8px;
+}
+
+.related-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.related-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6C757D;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.related-value {
+    font-size: 1rem;
+    color: #E91E63;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.nightMode .related-item {
+    border-bottom-color: #3A3A3A;
+}
+
+.nightMode .related-label {
+    color: #999;
+}
+
+.nightMode .related-value {
+    color: #FF6B9D;
+}
 
 
 /**************************************
@@ -1364,7 +1388,7 @@ body.isWin.android .mobile-type-hint {
 @media screen and (min-width: 1024px) {
     .card-container {
         max-width: 900px;
-        padding: 28px;
+        padding: 20px;
         gap: 20px;
     }
     
@@ -1421,7 +1445,7 @@ body.isWin.android .mobile-type-hint {
 @media screen and (min-width: 1400px) {
     .card-container {
         max-width: 1100px;
-        padding: 32px;
+        padding: 24px;
         gap: 24px;
     }
     
@@ -2127,7 +2151,7 @@ body.card4 {
 /* Cho container chính chiếm đúng chiều rộng mong muốn và tự căn giữa */
 body.card4 .card-container.immersive-container {
     width: 90vw;       /* << LUÔN RỘNG 90% MÀN HÌNH */
-    max-width: 1100px; /* << NHƯNG KHÔNG QUÁ 1100PX */
+    max-width: 1400px; /* << NHƯNG KHÔNG QUÁ 1100PX */
     margin: 0;
     padding: 0;
     border: none;
@@ -2260,7 +2284,7 @@ body.card4 {
 
 body.card4 .card-container.immersive-container {
     width: 90vw;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0;
     padding: 0;
     border: none;

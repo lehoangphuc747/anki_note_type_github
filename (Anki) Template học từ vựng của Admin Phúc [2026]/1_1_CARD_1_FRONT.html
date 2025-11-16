@@ -17,7 +17,9 @@
         <div class="type-input-wrapper">
           {{type:word}}
           <!-- Overlay hiển thị real-time check ngay trong input -->
-          <div id="typeans-overlay" class="typeans-overlay"></div>
+          <div id="typeans-overlay" class="typeans-overlay">
+            <span><span class="type-placeholder">_</span></span>
+          </div>
         </div>
        
         
@@ -31,6 +33,9 @@
         
         <!-- Container hiển thị kết quả check real-time (dưới input - backup) -->
         <div id="typeans-display" class="typeans-display"></div>
+        
+        <!-- Đáp án đúng để check (ẩn, chỉ dùng để so sánh) -->
+        <span id="correct-answer" style="display: none;">{{word}}</span>
         
         <!-- Hàng mới chứa Loại từ và Nút Gợi ý -->
         <div class="word-meta-row-front">
@@ -49,20 +54,39 @@
 <!-- DÁN ĐOẠN NÀY VÀO ĐỂ THAY THẾ CHO SCRIPT CŨ -->
 <script>
   (function() {
-    setTimeout(function() {
+    // Hàm khởi tạo - thử nhiều lần nếu cần
+    function initTypeAnswer() {
       var input = document.querySelector('input#typeans');
       var overlay = document.getElementById('typeans-overlay');
       var progressBar = document.getElementById('type-progress-bar');
       var correctAnswerSpan = document.getElementById('correct-answer');
-      var dapanDiv = document.querySelector('.dapan-dung');
       var hintButton = document.getElementById('type-hint-button');
 
-      if (!input || !overlay || !correctAnswerSpan || !hintButton) return;
+      // Kiểm tra các element cần thiết
+      if (!input || !overlay) {
+        // Thử lại sau 50ms nếu chưa có input hoặc overlay
+        setTimeout(initTypeAnswer, 50);
+        return;
+      }
+
+      // Lấy đáp án đúng
+      var correctAnswer = '';
+      if (correctAnswerSpan) {
+        correctAnswer = (correctAnswerSpan.textContent || '').toString().trim();
+      }
       
-      var correctAnswer = (correctAnswerSpan.textContent || '').toString();
+      // Nếu chưa có đáp án, hiển thị placeholder tạm thời
+      if (!correctAnswer) {
+        overlay.innerHTML = '<span><span class="type-placeholder">_</span></span>';
+        // Thử lại sau 100ms để lấy đáp án
+        setTimeout(initTypeAnswer, 100);
+        return;
+      }
+
       var totalChars = correctAnswer.replace(/\s/g, '').length;
 
       function createPlaceholder(text) {
+        if (!text || text.length === 0) return '<span class="type-placeholder">_</span>';
         return text.split('').map(function (ch) {
           return ch === ' ' ? '<span class="space-hint">-</span>' : '<span class="type-placeholder">_</span>';
         }).join('');
@@ -109,24 +133,35 @@
         }
       }
       
+      // Hiển thị placeholder ban đầu
       overlay.innerHTML = '<span>' + createPlaceholder(correctAnswer) + '</span>';
       
-      // LOGIC MỚI: Chỉ cần lắng nghe sự kiện 'input'
-      input.addEventListener('input', updateDisplay); 
+      // Lắng nghe sự kiện 'input' để cập nhật real-time
+      input.addEventListener('input', updateDisplay);
       
-      hintButton.addEventListener('click', function() {
-        var currentTyped = input.value;
-        var nextIndex = currentTyped.length;
-        
-        if (nextIndex < correctAnswer.length) {
-          var nextChar = correctAnswer[nextIndex];
-          input.value += nextChar;
-          updateDisplay(); // Cập nhật lại giao diện sau khi thêm gợi ý
-          input.focus();
-        }
-      });
+      // Cập nhật ngay khi có giá trị ban đầu (nếu có)
+      if (input.value) {
+        updateDisplay();
+      }
+      
+      // Xử lý nút gợi ý
+      if (hintButton) {
+        hintButton.addEventListener('click', function() {
+          var currentTyped = input.value;
+          var nextIndex = currentTyped.length;
+          
+          if (nextIndex < correctAnswer.length) {
+            var nextChar = correctAnswer[nextIndex];
+            input.value += nextChar;
+            updateDisplay(); // Cập nhật lại giao diện sau khi thêm gợi ý
+            input.focus();
+          }
+        });
+      }
 
+      // Xử lý hiển thị đáp án sau khi show answer
       var typeansDiv = document.getElementById('typeans');
+      var dapanDiv = document.querySelector('.dapan-dung');
       if (dapanDiv && typeansDiv) {
         var observer = new MutationObserver(function() {
           if (typeansDiv.innerHTML.trim() !== '') {
@@ -135,7 +170,16 @@
         });
         observer.observe(typeansDiv, { childList: true, subtree: true });
       }
-    }, 100);
+    }
+    
+    // Bắt đầu khởi tạo sau khi DOM sẵn sàng
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initTypeAnswer, 100);
+      });
+    } else {
+      setTimeout(initTypeAnswer, 100);
+    }
   })();
 </script>  
       <!-- Nghĩa (edit được) + giải thích (hint) -->

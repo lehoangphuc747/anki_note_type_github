@@ -50,27 +50,116 @@
       </div>
       {{/example}}
       
-      <!-- CẬP NHẬT: Các mục thông tin có thể thu gọn -->
-      {{#collocation}}
+      <!-- CẬP NHẬT: Gom tất cả vào 1 box "Mở rộng" -->
+      {{#collocation}}{{#synonym}}{{#antonym}}
       <details class="collapsible-section">
-        <summary>Cụm từ đi kèm</summary>
-        <div class="collapsible-content">{{collocation}}</div>
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
       </details>
-      {{/collocation}}
-  
-      {{#synonym}}
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu chỉ có collocation -->
+      {{#collocation}}{{^synonym}}{{^antonym}}
       <details class="collapsible-section">
-        <summary>Đồng nghĩa</summary>
-        <div class="collapsible-content">{{synonym}}</div>
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+        </div>
       </details>
-      {{/synonym}}
-  
-      {{#antonym}}
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu chỉ có synonym -->
+      {{#synonym}}{{^collocation}}{{^antonym}}
       <details class="collapsible-section">
-        <summary>Trái nghĩa</summary>
-        <div class="collapsible-content">{{antonym}}</div>
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+        </div>
       </details>
-      {{/antonym}}
+      {{/antonym}}{{/collocation}}{{/synonym}}
+      
+      <!-- Nếu chỉ có antonym -->
+      {{#antonym}}{{^collocation}}{{^synonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/synonym}}{{/collocation}}{{/antonym}}
+      
+      <!-- Nếu có collocation + synonym -->
+      {{#collocation}}{{#synonym}}{{^antonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu có collocation + antonym -->
+      {{#collocation}}{{#antonym}}{{^synonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/synonym}}{{/antonym}}{{/collocation}}
+      
+      <!-- Nếu có synonym + antonym -->
+      {{#synonym}}{{#antonym}}{{^collocation}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/collocation}}{{/antonym}}{{/synonym}}
   
       <!-- Hình ảnh -->
       {{#image}}

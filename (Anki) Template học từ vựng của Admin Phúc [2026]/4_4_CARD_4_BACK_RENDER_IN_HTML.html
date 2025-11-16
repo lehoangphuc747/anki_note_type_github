@@ -1,6 +1,6 @@
 <html class="win chrome" dir="ltr" data-bs-theme="light"><head>
     <title>card layout</title>
-<base href="http://127.0.0.1:3390/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:3390/_anki/css/webview.css"><style>
+<base href="http://127.0.0.1:9874/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/webview.css"><style>
 body { zoom: 1; background-color: var(--canvas); }
 html { font-family:"Segoe UI"; }
 
@@ -8,7 +8,7 @@ button { font-family: "Segoe UI"; }
             
 :root { --canvas: #f5f5f5 }
 :root[class*=night-mode] { --canvas: #2c2c2c }
-</style><link rel="stylesheet" type="text/css" href="http://127.0.0.1:3390/_anki/css/reviewer.css">
+</style><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/reviewer.css">
 <style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
 .CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
 .CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
@@ -401,10 +401,10 @@ mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
 </style></head>
 
 <body class="card card4 isWin">
-<script src="http://127.0.0.1:3390/_anki/js/webview.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/mathjax.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/vendor/mathjax/tex-chtml-full.js"></script>
-<script src="http://127.0.0.1:3390/_anki/js/reviewer.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/webview.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/mathjax.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/vendor/mathjax/tex-chtml-full.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/reviewer.js"></script>
 
 <div id="_mark" hidden="">★</div>
 <div id="_flag" hidden="">⚑</div>
@@ -625,17 +625,13 @@ body.card.nightMode .card-container {
     line-height: 1.5;
     padding-top: 8px;
     border-top: 1px solid #E9ECEF;
-    text-align: left;
+    text-align: center;
 }
 
 .nightMode .giaithich {
     color: #CCCCCC;
     border-top-color: #3A3A3A;
 }
-
-/* Hint (giải thích): front căn giữa, back căn trái */
-.card-container.card-front .giaithich { text-align: center; }
-.card-container.card-back .giaithich { text-align: left; }
 
 /* ------------------------------------
    HINT / EXPLAIN TOGGLE (a.hint + div.hint)
@@ -677,18 +673,9 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Nghĩa căn trái */
-.nghia { text-align: left; }
-
-/* Card 1 (mặt trước): Nghĩa căn giữa */
-.card-container.card-front .nghia { text-align: center; }
-
-/* Mặt sau: Nghĩa luôn căn trái */
-.card-container.card-back .nghia { text-align: left; }
-
 .nightMode a.hint { color: #FF6B9D; }
 .nightMode a.hint:hover { background: rgba(255,107,157,0.12); color: #ff82aa; }
-.nightMode a.hint:focus-visible { outline-color: rgba(255,107,157,0.45); }
+.nightMode a.hint:focus-visible { outline-color: rgba(11, 9, 10, 0.45); }
 .nightMode div.hint {
     background: rgba(255,107,157,0.08);
     border-color: rgba(255,107,157,0.5);
@@ -740,7 +727,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container {
     margin: 0;
     padding: 16px;
-    text-align: left;
+    text-align: center;
     background: #FFFFFF;
     border: 1px solid #E9ECEF;
     border-left: 4px solid #E91E63;
@@ -751,6 +738,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
 .vidu-container .vidu-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2px;
     margin-bottom: 8px;
 }
@@ -806,6 +794,7 @@ div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
     font-weight: 400;
     color: #495057;
     line-height: 1.5;
+    text-align: center;
 }
 
 /* Night Mode */
@@ -1691,6 +1680,7 @@ body.isWin.android .mobile-type-hint {
     border-top: 1px solid #E9ECEF;
     color: #E91E63;
     font-weight: 500;
+    text-align: center;
 }
 
 .nightMode .collapsible-section {
@@ -2538,7 +2528,7 @@ body.card4 {
 /* Cho container chính chiếm đúng chiều rộng mong muốn và tự căn giữa */
 body.card4 .card-container.immersive-container {
     width: 90vw;       /* << LUÔN RỘNG 90% MÀN HÌNH */
-    max-width: 1100px; /* << NHƯNG KHÔNG QUÁ 1100PX */
+    max-width: 1400px; /* << NHƯNG KHÔNG QUÁ 1100PX */
     margin: 0;
     padding: 0;
     border: none;
@@ -2671,7 +2661,7 @@ body.card4 {
 
 body.card4 .card-container.immersive-container {
     width: 90vw;
-    max-width: 1100px;
+    max-width: 1400px;
     margin: 0;
     padding: 0;
     border: none;
@@ -2855,7 +2845,7 @@ body.card4 .review-container .nghiavidu {
       <!-- 2. Câu gốc, âm thanh và nghĩa -->
       <div class="vidu-container">
         <div class="vidu-row">
-          <div class="vidu"><p>이 통신사 <strong>가입자</strong>는 천만 명이 넘습니다.</p></div>
+          <div class="vidu"><p>저는 <strong>매직기로 머리를 폈어요</strong>.</p></div>
           <div class="sound">
 <a class="replay-button soundLink" href="#" onclick="pycmd('play:a:0'); return false;" draggable="false">
     <svg class="playImage" viewBox="0 0 64 64" version="1.1">
@@ -2864,7 +2854,7 @@ body.card4 .review-container .nghiavidu {
     </svg>
 </a></div>
         </div>
-        <div class="nghiavidu"><p>Số <strong>người đăng ký</strong> của nhà mạng này đã vượt quá 10 triệu người.</p></div>
+        <div class="nghiavidu"><p>Tôi <strong>duỗi tóc bằng máy duỗi</strong>.</p></div>
       </div>
     </div>
 
@@ -2880,9 +2870,9 @@ body.card4 .review-container .nghiavidu {
     <footer class="immersive-details">
       <!-- ... (toàn bộ phần phân tích chi tiết giữ nguyên) ... -->
       <div class="tuvung">
-        가입자
+        매직기로 머리를 펴다
         <div class="word-meta-row">
-          <div class="loaitu">Danh từ</div>
+          <div class="loaitu">động từ</div>
           
           <div class="sound">
 <a class="replay-button soundLink" href="#" onclick="pycmd('play:a:1'); return false;" draggable="false">
@@ -2893,10 +2883,10 @@ body.card4 .review-container .nghiavidu {
 </a></div>
         </div>
       </div>
-      <div class="nghia">người đăng ký<div class="giaithich"><p>Người đã đăng ký để sử dụng một dịch vụ hoặc trở thành thành viên.</p></div></div>
-      <details class="collapsible-section"><summary>Cụm từ đi kèm</summary><div class="collapsible-content"><p>신규 가입자 (người đăng ký mới), 기존 가입자 (người đăng ký cũ)</p></div></details>
-      <details class="collapsible-section"><summary>Đồng nghĩa</summary><div class="collapsible-content"><p>회원 (hội viên), 구독자 (người đăng ký theo dõi)</p></div></details>
-      <details class="collapsible-section"><summary>Trái nghĩa</summary><div class="collapsible-content"><p>탈퇴자 (người hủy đăng ký)</p></div></details>
+      <div class="nghia">duỗi tóc bằng máy duỗi<div class="giaithich"><p>Làm tóc thẳng hoàn toàn bằng máy duỗi nhiệt.</p></div></div>
+      
+      
+      
       
     </footer>
   </div>
@@ -2919,7 +2909,17 @@ body.card4 .review-container .nghiavidu {
   </script>
 
 </div>
-</div>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script role="smarterTypeField" src="_smarterTypeField.min2024-11-28_02-08-05.js" data-config="2025-11-13_22-02-54"></script></div>
 
 
 </body></html>
