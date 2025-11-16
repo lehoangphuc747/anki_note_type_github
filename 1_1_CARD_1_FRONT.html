@@ -1,0 +1,173 @@
+<!-- FRONT CARD -->
+
+<div class="card-container card-front">
+
+  <!-- ==================================================
+       ADMIN PHÚC FROM ANKIVN
+       a.k.a TIẾNG HÀN PHÚC LEE
+       TRÙM DẠY ANKI
+       FB: https://www.facebook.com/tui.la.phuc747/
+       ================================================== -->
+
+
+    <main class="card-content">
+      <!-- Từ vựng tiếng Hàn (chế độ gõ đáp án) -->
+      <div class="tuvung">
+        <!-- Input wrapper với overlay real-time -->
+        <div class="type-input-wrapper">
+          {{type:word}}
+          <!-- Overlay hiển thị real-time check ngay trong input -->
+          <div id="typeans-overlay" class="typeans-overlay"></div>
+        </div>
+       
+        
+        <!-- Progress indicator -->
+        <div class="type-progress-container">
+          <div id="type-progress-bar" class="type-progress-bar"></div>
+        </div>
+        
+        <!-- Dãy biểu thị dấu cách (không chữ): "- - _ - -" -->
+        <div id="space-indicators" class="space-indicators" style="display:none" aria-hidden="true"></div>
+        
+        <!-- Container hiển thị kết quả check real-time (dưới input - backup) -->
+        <div id="typeans-display" class="typeans-display"></div>
+        
+        <!-- Hàng mới chứa Loại từ và Nút Gợi ý -->
+        <div class="word-meta-row-front">
+            {{#pos}}
+            <div class="loaitu">{{pos}}</div>
+            {{/pos}}
+
+            <button id="type-hint-button" class="type-hint-button" aria-label="Gợi ý gõ chữ">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A7,7,0,0,0,5,9c0,2.38,1.19,4.47,3,5.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74c1.81-1.27,3-3.36,3-5.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z"/></svg>
+            </button>
+        </div>
+        
+      </div>
+      
+      <!-- CẬP NHẬT: SCRIPT VỚI LOGIC ĐƠN GIẢN NHẤT -->
+<!-- DÁN ĐOẠN NÀY VÀO ĐỂ THAY THẾ CHO SCRIPT CŨ -->
+<script>
+  (function() {
+    setTimeout(function() {
+      var input = document.querySelector('input#typeans');
+      var overlay = document.getElementById('typeans-overlay');
+      var progressBar = document.getElementById('type-progress-bar');
+      var correctAnswerSpan = document.getElementById('correct-answer');
+      var dapanDiv = document.querySelector('.dapan-dung');
+      var hintButton = document.getElementById('type-hint-button');
+
+      if (!input || !overlay || !correctAnswerSpan || !hintButton) return;
+      
+      var correctAnswer = (correctAnswerSpan.textContent || '').toString();
+      var totalChars = correctAnswer.replace(/\s/g, '').length;
+
+      function createPlaceholder(text) {
+        return text.split('').map(function (ch) {
+          return ch === ' ' ? '<span class="space-hint">-</span>' : '<span class="type-placeholder">_</span>';
+        }).join('');
+      }
+      
+      function updateDisplay() {
+        var typed = input.value;
+        var result = '';
+        var correctCount = 0;
+        var maxLen = Math.max(correctAnswer.length, typed.length);
+
+        for (var i = 0; i < maxLen; i++) {
+          var correctChar = correctAnswer[i];
+          var typedChar = typed[i];
+          
+          if (correctChar === undefined && typedChar !== undefined) {
+            result += (typedChar === ' ') ? '<span class="type-space typeExtra"></span>' : '<span class="typeExtra type-char-animate">' + typedChar + '</span>';
+            continue;
+          }
+          
+          if (typedChar === undefined) {
+            result += (correctChar === ' ') ? '<span class="space-hint">-</span>' : '<span class="type-placeholder">_</span>';
+            continue;
+          }
+          
+          if (correctChar === ' ') {
+            result += (typedChar === ' ') ? '<span class="space-real"></span>' : '<span class="space-hint error">-</span>';
+            continue;
+          }
+          
+          if (typedChar === correctChar) {
+            result += '<span class="typeGood type-char-animate">' + typedChar + '</span>';
+            if(correctChar !== ' ') correctCount++;
+          } else {
+            result += '<span class="typeBad type-char-animate">' + typedChar + '</span>';
+          }
+        }
+        
+        overlay.innerHTML = result;
+        
+        if (progressBar && totalChars > 0) {
+          var progress = (correctCount / totalChars) * 100;
+          progressBar.style.width = progress + '%';
+        }
+      }
+      
+      overlay.innerHTML = '<span>' + createPlaceholder(correctAnswer) + '</span>';
+      
+      // LOGIC MỚI: Chỉ cần lắng nghe sự kiện 'input'
+      input.addEventListener('input', updateDisplay); 
+      
+      hintButton.addEventListener('click', function() {
+        var currentTyped = input.value;
+        var nextIndex = currentTyped.length;
+        
+        if (nextIndex < correctAnswer.length) {
+          var nextChar = correctAnswer[nextIndex];
+          input.value += nextChar;
+          updateDisplay(); // Cập nhật lại giao diện sau khi thêm gợi ý
+          input.focus();
+        }
+      });
+
+      var typeansDiv = document.getElementById('typeans');
+      if (dapanDiv && typeansDiv) {
+        var observer = new MutationObserver(function() {
+          if (typeansDiv.innerHTML.trim() !== '') {
+            dapanDiv.style.display = 'block';
+          }
+        });
+        observer.observe(typeansDiv, { childList: true, subtree: true });
+      }
+    }, 100);
+  })();
+</script>  
+      <!-- Nghĩa (edit được) + giải thích (hint) -->
+      <div class="nghia">
+        {{edit:meaning}}
+        {{#explain}}
+        <div class="giaithich">{{hint:explain}}</div>
+        {{/explain}}
+  
+        <!-- Âm thanh nghĩa (ẩn) -->
+        <div style="display: none;" class="sound-nghia">{{audio_meaning}}</div>
+      </div>
+  
+      <!-- Hình ảnh (nếu có) -->
+      {{#image}}
+      <div class="hinhanh">{{image}}</div>
+      {{/image}}
+    </main>
+  
+  
+  <!-- Phần header để hiển thị thông tin khóa học, sách, bài -->
+  <header class="card-header">
+    <span class="tag1">{{tag_1}}</span>
+    <span class="tag2">> {{tag_2}}</span>
+    <span class="tag3">> {{tag_3}}</span>
+    <span class="tag4">> {{tag_4}}</span>
+  </header>
+  
+    <!-- Footer: Link Facebook, thông tin hoặc branding -->
+    <footer class="card-footer">
+      <a class="info" href="https://www.facebook.com/tui.la.phuc747/">
+        FB: Lê Hoàng Phúc (Tiếng Hàn Phúc Lee)
+      </a>
+    </footer>
+  </div>

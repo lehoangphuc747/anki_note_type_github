@@ -1,0 +1,95 @@
+<!-- BACK CARD -->
+
+<div class="card-container card-back">
+
+  <!-- ==================================================
+       ADMIN PHÚC FROM ANKIVN
+       a.k.a TIẾNG HÀN PHÚC LEE
+       TRÙM DẠY ANKI
+       FB: https://www.facebook.com/tui.la.phuc747/
+       ================================================== -->
+
+    <!-- Main content -->
+    <main class="card-content">
+      <!-- Từ vựng -->
+      <div class="tuvung">
+        {{type:word}}
+  
+        <!-- Phienam, loaitu, sound cùng hàng -->
+        <div class="word-meta-row">
+          {{#pos}}
+          <div class="loaitu">{{pos}}</div>
+          {{/pos}}
+
+          {{#transliteration}}
+          <div class="phienam">[{{transliteration}}]</div>
+          {{/transliteration}}
+
+          <div class="sound">{{audio_word}}</div>
+        </div>
+      </div>
+  
+      <!-- Nghĩa từ vựng -->
+      <div class="nghia">
+        {{edit:meaning}}
+        {{#explain}}
+        <div class="giaithich">{{explain}}</div>
+        {{/explain}}
+      </div>
+  
+     <!-- Ví dụ -->
+      {{#example}}
+      <div class="vidu-container">
+        <div class="vidu-row">
+          <div class="vidu">{{example}}</div>
+          <div class="sound">{{audio_example}}</div>
+        </div>
+        <div class="nghiavidu">{{example_translated}}</div>
+      </div>
+      {{/example}}
+      
+      <!-- CẬP NHẬT: Các mục thông tin có thể thu gọn -->
+      {{#collocation}}
+      <details class="collapsible-section">
+        <summary>Cụm từ đi kèm</summary>
+        <div class="collapsible-content">{{collocation}}</div>
+      </details>
+      {{/collocation}}
+  
+      {{#synonym}}
+      <details class="collapsible-section">
+        <summary>Đồng nghĩa</summary>
+        <div class="collapsible-content">{{synonym}}</div>
+      </details>
+      {{/synonym}}
+  
+      {{#antonym}}
+      <details class="collapsible-section">
+        <summary>Trái nghĩa</summary>
+        <div class="collapsible-content">{{antonym}}</div>
+      </details>
+      {{/antonym}}
+    </main>
+  
+      <!-- Hình ảnh -->
+      {{#image}}
+      <div class="hinhanh">{{image}}</div>
+      {{/image}}
+      
+    <!-- Header tags (tag1-4) -->
+    <header class="card-header">
+      <span class="tag1">{{tag_1}}</span>
+      <span class="tag2">> {{tag_2}}</span>
+      <span class="tag3">> {{tag_3}}</span>
+      <span class="tag4">> {{tag_4}}</span>
+    </header>
+
+    <!-- Footer -->
+    <footer class="card-footer">
+      <a class="info" href="https://www.facebook.com/tui.la.phuc747/">
+        FB: Lê Hoàng Phúc (Tiếng Hàn Phúc Lee)
+      </a>
+    </footer>
+  </div>
+ 
+ <script role='smarterTypeField' src="_smarterTypeField.min2024-11-28_02-08-05.js" data-config="2025-11-13_22-02-54"></script>

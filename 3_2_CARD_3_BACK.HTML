@@ -1,0 +1,90 @@
+{{#example}}
+<div class="card-container immersive-container">
+
+  <!-- Phần nội dung chính, luôn hiển thị -->
+  <main class="immersive-content">
+    
+    <!-- Ví dụ và nghĩa của ví dụ -->
+    <div class="vidu-container">
+      <div class="vidu-row">
+        <div class="vidu">{{example}}</div>
+        <div class="sound">{{audio_example}}</div>
+      </div>
+      <div class="nghiavidu">{{example_translated}}</div>
+    </div>
+
+  </main>
+
+  <!-- Nút bấm để hiển thị/ẩn chi tiết -->
+  <button id="toggle-details-button" class="immersive-button" onclick="toggleDetails()">
+    Phân tích từ vựng
+  </button>
+
+  <!-- Phần chi tiết, mặc định ẩn và có thể đóng/mở -->
+  <div id="details-wrapper" class="details-collapsible">
+    <!-- Đường kẻ phân cách -->
+    <hr class="immersive-divider">
+
+    <!-- Phần "phân tích" chi tiết -->
+    <footer class="immersive-details">
+      <!-- Từ vựng chính -->
+      <div class="tuvung">
+        {{edit:word}}
+        <div class="word-meta-row">
+          {{#pos}}<div class="loaitu">{{pos}}</div>{{/pos}}
+          {{#transliteration}}<div class="phienam">[{{transliteration}}]</div>{{/transliteration}}
+          <div class="sound">{{audio_word}}</div>
+        </div>
+      </div>
+
+      <!-- Nghĩa của từ -->
+      <div class="nghia">
+        {{meaning}}
+        {{#explain}}<div class="giaithich">{{explain}}</div>{{/explain}}
+      </div>
+
+      <!-- Các thông tin phụ -->
+      {{#collocation}}
+      <details class="collapsible-section"><summary>Cụm từ đi kèm</summary><div class="collapsible-content">{{collocation}}</div></details>
+      {{/collocation}}
+
+      {{#synonym}}
+      <details class="collapsible-section"><summary>Đồng nghĩa</summary><div class="collapsible-content">{{synonym}}</div></details>
+      {{/synonym}}
+
+      {{#antonym}}
+      <details class="collapsible-section"><summary>Trái nghĩa</summary><div class="collapsible-content">{{antonym}}</div></details>
+      {{/antonym}}
+      
+      <!-- Hình ảnh -->
+      {{#image}}
+      <div class="hinhanh">{{image}}</div>
+      {{/image}}
+
+    </footer>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      var details = document.getElementById('details-wrapper');
+      var button = document.getElementById('toggle-details-button');
+      
+      // Kiểm tra xem phần chi tiết có đang được hiển thị không
+      var isVisible = details.classList.contains('is-visible');
+      
+      if (isVisible) {
+        // Nếu đang hiện -> ẩn đi
+        details.classList.remove('is-visible');
+        button.classList.remove('is-active');
+        button.textContent = 'Phân tích từ vựng';
+      } else {
+        // Nếu đang ẩn -> hiện ra
+        details.classList.add('is-visible');
+        button.classList.add('is-active');
+        button.textContent = 'Ẩn chi tiết';
+      }
+    }
+  </script>
+
+</div>
+{{/example}}
