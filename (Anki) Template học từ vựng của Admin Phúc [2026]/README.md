@@ -2,6 +2,8 @@
 
 **Languages**: [English](./README_EN.md) | Tiếng Việt
 
+**[← Quay lại trang chủ](../../README.md)**
+
 ---
 
 Template Anki chuyên nghiệp cho việc học từ vựng với 4 loại card khác nhau.
