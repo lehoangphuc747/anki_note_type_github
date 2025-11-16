@@ -974,10 +974,10 @@ body.isWin.android .mobile-type-hint {
     width: 8px;
 }
 
-/* Ký tự đúng - real-time */
+/* Ký tự đúng - real-time - Màu đậm hơn, giữ background và border */
 .typeans-display .typeGood,
 .typeans-overlay .typeGood {
-    color: #14C38E;
+    color: #00796B;
     background-color: #B6FFCE;
     border: 1px solid #A3CFBB;
     padding: 2px 4px;
@@ -987,20 +987,24 @@ body.isWin.android .mobile-type-hint {
 
 .nightMode .typeans-display .typeGood,
 .nightMode .typeans-overlay .typeGood {
-    color: #6BCF8F;
+    color: #4DB6AC;
     background-color: rgba(107, 207, 143, 0.15);
     border-color: rgba(107, 207, 143, 0.3);
 }
 
-/* Ký tự sai - real-time */
+/* Ký tự sai - real-time - Màu đậm hơn, giữ background và border, thêm underline */
 .typeans-display .typeBad,
 .typeans-overlay .typeBad {
-    color: #FF6363;
-    background-color: #FCFFC9;
+    color: #C62828;
+    background-color: #FFE4C0;
     border: 1px solid #FFD4A3;
     padding: 2px 4px;
     border-radius: 4px;
     font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 /* Ký tự nhập thừa (vàng) */
@@ -1024,9 +1028,10 @@ body.isWin.android .mobile-type-hint {
 
 .nightMode .typeans-display .typeBad,
 .nightMode .typeans-overlay .typeBad {
-    color: #FF6B6B;
+    color: #E57373;
     background-color: rgba(255, 107, 107, 0.15);
-    border-color: rgba(255, 107, 107, 0.3);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
 }
 
 .nightMode .typeans-display .typeExtra,
@@ -1091,47 +1096,58 @@ body.isWin.android .mobile-type-hint {
     transition: all 0.15s ease;
 }
 
-/* Ký tự ĐÚNG - Màu xanh với background xanh nhạt */
+/* Ký tự ĐÚNG - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeGood {
-    color: #14C38E;
+    color: #00796B;
     background-color: #B6FFCE;
     border: 1px solid #A3CFBB;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
 
 .nightMode #typeans .typeGood {
-    color: #6BCF8F;
+    color: #4DB6AC;
     background-color: rgba(107, 207, 143, 0.15);
     border-color: rgba(107, 207, 143, 0.3);
 }
 
-/* Ký tự SAI - Màu đỏ với background đỏ nhạt */
+/* Ký tự SAI - Màu đậm hơn, giữ background và border, thêm underline - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeBad {
-    color: #FF6363;
+    color: #C62828;
     background-color: #FFE4C0;
     border: 1px solid #FFD4A3;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
 }
 
 .nightMode #typeans .typeBad {
-    color: #FF6B6B;
+    color: #E57373;
     background-color: rgba(255, 107, 107, 0.15);
     border-color: rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
 }
 
-/* Ký tự BỎ SÓT - Màu xanh dương với background xanh dương nhạt */
+/* Ký tự BỎ SÓT - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
 #typeans .typeMissed,
 #typeans .typePass {
-    color: #0D6EFD;
+    color: #1E88E5;
     background-color: #D6F4ED;
     border: 1px solid #9EC5FE;
     font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
     text-decoration: underline;
 }
 
 .nightMode #typeans .typeMissed,
 .nightMode #typeans .typePass {
-    color: #6BA3FF;
+    color: #64B5F6;
     background-color: rgba(107, 163, 255, 0.15);
     border-color: rgba(107, 163, 255, 0.3);
 }
@@ -1695,6 +1711,12 @@ body.card3 {
     min-height: 95vh;
     padding: 20px;
     box-sizing: border-box;
+    background: #F8F9FA; /* Nền xám nhạt */
+}
+
+/* Night Mode cho Card 3 */
+body.nightMode.card3 {
+    background: #1A1A1A; /* Nền tối cho night mode */
 }
 
 /* Ghi đè container mặc định để nó trong suốt và không có viền */
@@ -2354,18 +2376,15 @@ body.card4 .review-container {
     box-sizing: border-box;
 }
 
-/* Khối so sánh gõ chữ */
-body.card4 #typing-result {
+/* Khối so sánh gõ chữ - Card 4 dùng chung #typeans với Card 1 */
+body.card4 #typeans {
     font-size: 1.8rem;
     line-height: 1.7;
     word-break: break-word;
     font-weight: 500;
 }
-body.card4 #typing-result .typeGood { color: #00796B; font-weight: 700; }
-body.card4 #typing-result .typeBad { color: #C62828; font-weight: 700; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-body.card4 #typing-result .typeMissed { color: #1E88E5; font-weight: 700; }
-body.card4 #typing-result > div,
-body.card4 #typing-result code { font-family: inherit !important; font-size: inherit !important; }
+body.card4 #typeans > div,
+body.card4 #typeans code { font-family: inherit !important; font-size: inherit !important; }
 
 /* Đường kẻ phân cách */
 body.card4 .review-divider {
@@ -2405,8 +2424,6 @@ body.card4 .review-container .nghiavidu {
 
 /* --- NIGHT MODE --- */
 .nightMode body.card4 .review-container { background: #2A2A2A; border-color: #3A3A3A; }
-.nightMode body.card4 #typing-result .typeGood { color: #4DB6AC; }
-.nightMode body.card4 #typing-result .typeBad { color: #E57373; }
-.nightMode body.card4 #typing-result .typeMissed { color: #64B5F6; }
+/* Card 4 dùng chung CSS với Card 1 cho #typeans */
 .nightMode body.card4 .review-divider { border-top-color: #3A3A3A; }
 .nightMode body.card4 .review-container .nghiavidu { color: #BDBDBD; }
