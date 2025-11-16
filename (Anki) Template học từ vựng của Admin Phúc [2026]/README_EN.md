@@ -6,6 +6,10 @@
 
 Professional Anki template for vocabulary learning with 4 different card types.
 
+## 📦 Download
+
+**[📥 Download .apkg file](./%28Anki%29%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D.apkg)** - Pre-configured Anki package file, just import into Anki to use immediately.
+
 ## 📋 File List
 
 ### Card 1 - Basic Vocabulary
