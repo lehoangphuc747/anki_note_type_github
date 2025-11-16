@@ -2,7 +2,7 @@
 
 **Languages**: [English](./README_EN.md) | Tiếng Việt
 
-**[← Quay lại trang chủ](../../README.md)**
+**[← Quay lại trang chủ](https://github.com/lehoangphuc747/anki_note_type_github)**
 
 ---
 
