@@ -6,7 +6,7 @@
 
 ## 🧭 Điều hướng nhanh
 
-> **📁 [Các Template](#-các-template-có-sẵn)** | **🎨 [Tài nguyên Thiết kế](#-tài-nguyên-thiết-kế)** | **🤖 [Công cụ AI](#-công-cụ-ai)**
+> **📁 [Các Template](#-các-template-có-sẵn)** | **📚 [Hướng Dẫn](#-hướng-dẫn)** | **🎨 [Tài nguyên Thiết kế](#-tài-nguyên-thiết-kế)** | **🤖 [Công cụ AI](#-công-cụ-ai)**
 
 ---
 
@@ -15,6 +15,14 @@ Repository chứa các template Anki được thiết kế bởi Admin Phúc t�
 ## 📁 Các template có sẵn
 
 - **[(Anki) Template học từ vựng của Admin Phúc [2026]](./%28Anki%29%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/README.md)** - Template học từ vựng với 4 loại card khác nhau, hỗ trợ tính năng gõ đáp án và hiển thị từ liên quan
+
+## 📚 Hướng dẫn
+
+Tài liệu dịch từ [Anki Manual](https://docs.ankiweb.net/templates/intro.html) chính thức:
+
+- **[Hướng Dẫn Card Templates](./ANKI_CARD_TEMPLATES_GUIDE.md)** - Field Replacements, Card Generation, keyboard shortcuts
+- **[Styling & HTML](./ANKI_STYLING_HTML_GUIDE.md)** - CSS styling, fonts, Night Mode, Platform-specific CSS, Javascript
+- **[Checks and Errors](./ANKI_CHECKS_ERRORS_GUIDE.md)** - Các lỗi thường gặp và cách khắc phục
 
 ## 🎨 Tài nguyên thiết kế
 
