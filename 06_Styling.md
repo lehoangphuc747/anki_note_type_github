@@ -391,15 +391,4 @@ Tham khảo: [Card Templates User Input Guide](https://forums.ankiweb.net/t/card
 
 ---
 
-## 📚 Tài Nguyên Bổ Sung
-
-- **[Hướng Dẫn Card Templates](./ANKI_CARD_TEMPLATES_GUIDE.md)** - Field Replacements và Card Generation
-- **[Checks and Errors](./ANKI_CHECKS_ERRORS_GUIDE.md)** - Các lỗi thường gặp và cách khắc phục
-- **[Các AI Tools Để Tạo Anki Templates](./AI_TOOLS_FOR_ANKI_TEMPLATES.md)** - Hướng dẫn sử dụng AI
-- **[UI Style Categories](./UI_STYLE_CATEGORIES.md)** - Tham khảo các phong cách thiết kế UI
-- **[HTML Color Codes](https://htmlcolorcodes.com/)** - Chọn màu sắc cho cards
-
----
-
-**Chúc bạn tạo được những card templates đẹp mắt! 🎉**
-
+### ⬅️ [Bài trước: Text to Speech (TTS)](./05_TTS.md) | [Bài tiếp theo: Checks and Errors](./07_Errors.md) ➡️

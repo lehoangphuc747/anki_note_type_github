@@ -225,15 +225,6 @@ hoặc
 
 ---
 
-## 📚 Tài Nguyên Bổ Sung
-
-- **[Hướng Dẫn Card Templates](./ANKI_CARD_TEMPLATES_GUIDE.md)** - Field Replacements và Card Generation
-- **[Styling & HTML](./ANKI_STYLING_HTML_GUIDE.md)** - Tùy chỉnh giao diện cards
-- **[Các AI Tools Để Tạo Anki Templates](./AI_TOOLS_FOR_ANKI_TEMPLATES.md)** - Hướng dẫn sử dụng AI
-- **[Key Concepts](https://docs.ankiweb.net/getting-started.html#key-concepts)** - Khái niệm cơ bản trong Anki
-
----
-
 ## 📝 Tóm tắt các lỗi thường gặp
 
 | Lỗi | Nguyên nhân | Cách sửa nhanh |
@@ -248,5 +239,4 @@ hoặc
 
 ---
 
-**Chúc bạn sửa lỗi thành công! 🎉**
-
+### ⬅️ [Bài trước: Styling & HTML](./06_Styling.md) | [Bài tiếp theo: Công cụ AI](./Tools_AI.md) ➡️
