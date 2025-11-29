@@ -1,0 +1,172 @@
+{{#example}}
+<!-- ==================================================
+     CARD 4: SỬA LỖI CĂN GIỮA & LÀM RÕ PLACEHOLDER
+     ================================================== -->
+
+<div class="card-container immersive-container">
+
+    <main class="immersive-content">
+        <!-- Âm thanh ví dụ (sẽ được kích hoạt tự động) -->
+        <div style="display: none;">{{audio_example}}</div>
+
+        <!-- Giao diện gõ (hiện ngay từ đầu) -->
+        <div id="typing-interface" style="display: block;">
+            <p class="immersive-prompt" style="opacity: 0.7; margin-bottom: 20px; animation: none;">Nghe và chép lại câu</p>
+            <div class="tuvung">
+                
+                <div class="type-input-wrapper">
+                    {{type:example}}
+                    <div id="typeans-overlay" class="typeans-overlay"></div>
+                </div>
+               
+                <div class="type-progress-container">
+                  <div id="type-progress-bar" class="type-progress-bar"></div>
+                </div>
+
+                <div class="word-meta-row-front">
+                    <button id="replay-audio-button" class="type-hint-button" aria-label="Nghe lại">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" fill="#3B82F6"></path></svg>
+                    </button>
+                    <button id="type-hint-button" class="type-hint-button" aria-label="Gợi ý gõ chữ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A7,7,0,0,0,5,9c0,2.38,1.19,4.47,3,5.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74c1.81-1.27,3-3.36,3-5.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z"></path></svg>
+                    </button>
+                </div>
+                
+                <span id="correct-answer" style="display: none;">{{example}}</span>
+            </div>
+        </div>
+        
+        <!-- SCRIPT ĐÃ CẬP NHẬT -->
+        <script>
+        (function() {
+          setTimeout(function() {
+            var input = document.querySelector('input#typeans');
+            if (!input) return;
+
+            // *** FIX LỆCH PHẢI: TÌM VÀ XÓA THẺ <CENTER> CỦA ANKI ***
+            var ankiCenterTag = input.parentElement;
+            if (ankiCenterTag && ankiCenterTag.tagName === 'CENTER') {
+                var wrapper = ankiCenterTag.parentElement;
+                if (wrapper) {
+                    wrapper.insertBefore(input, ankiCenterTag); // Đưa input ra ngoài
+                    wrapper.removeChild(ankiCenterTag);        // Xóa thẻ <center> rỗng
+                }
+            }
+            // *** KẾT THÚC FIX ***
+
+            var overlay = document.getElementById('typeans-overlay');
+            var progressBar = document.getElementById('type-progress-bar');
+            var correctAnswerSpan = document.getElementById('correct-answer');
+            var hintButton = document.getElementById('type-hint-button');
+            var replayButton = document.getElementById('replay-audio-button');
+            var ankiAudioButton = document.querySelector('.immersive-content > div[style*="display: none"] .replay-button');
+
+            if (!ankiAudioButton) return;
+
+            ankiAudioButton.click();
+            input.focus();
+
+            replayButton.addEventListener('click', function() {
+                ankiAudioButton.click();
+                input.focus();
+            });
+
+            var correctAnswer = (correctAnswerSpan.textContent || '').toString().replace(/<[^>]*>/g, "").trim();
+            var totalChars = correctAnswer.replace(/\s/g, '').length;
+
+            // *** RESPONSIVE FONT SIZE: Tự động điều chỉnh dựa vào độ dài ***
+            var tuvungContainer = input.closest('.tuvung');
+            if (tuvungContainer) {
+                var sentenceLength = correctAnswer.length;
+                var lengthClass = '';
+                
+                if (sentenceLength < 30) {
+                    lengthClass = 'short';
+                } else if (sentenceLength < 60) {
+                    lengthClass = 'medium';
+                } else if (sentenceLength < 90) {
+                    lengthClass = 'long';
+                } else {
+                    lengthClass = 'very-long';
+                }
+                
+                tuvungContainer.setAttribute('data-length', lengthClass);
+            }
+            // *** KẾT THÚC RESPONSIVE FONT SIZE ***
+
+            function createPlaceholder(text) {
+              return text.split('').map(ch => ch === ' ' ? '<span class="space-hint">-</span>' : '<span class="type-placeholder">_</span>').join('');
+            }
+            
+            // *** AUTO-RESIZE WRAPPER HEIGHT: Điều chỉnh chiều cao wrapper theo overlay ***
+            function adjustWrapperHeight() {
+              var wrapper = input.closest('.type-input-wrapper');
+              if (!wrapper || !overlay) return;
+              
+              // Force reflow để đảm bảo overlay đã render
+              overlay.offsetHeight;
+              
+              // Đo chiều cao thực tế của overlay (bao gồm cả phần wrap)
+              var overlayHeight = overlay.scrollHeight;
+              var overlayOffsetHeight = overlay.offsetHeight;
+              
+              // Dùng giá trị lớn hơn giữa scrollHeight và offsetHeight
+              var actualHeight = Math.max(overlayHeight, overlayOffsetHeight);
+              
+              // Set chiều cao cho wrapper (ít nhất 3.5rem)
+              var minHeight = parseFloat(getComputedStyle(document.documentElement).fontSize) * 3.5;
+              var finalHeight = Math.max(actualHeight, minHeight);
+              
+              // Add extra padding để đảm bảo không bị cắt
+              wrapper.style.minHeight = finalHeight + 'px';
+              wrapper.style.height = 'auto';
+              
+              // Debug log
+              console.log('Wrapper height adjusted:', finalHeight, 'overlay:', overlayHeight, overlayOffsetHeight);
+            }
+            // *** KẾT THÚC AUTO-RESIZE ***
+            
+            function updateDisplay() {
+              var typed = input.value, result = '', correctCount = 0;
+              var maxLen = Math.max(correctAnswer.length, typed.length);
+              for (var i = 0; i < maxLen; i++) {
+                var correctChar = correctAnswer[i], typedChar = typed[i];
+                if (correctChar === undefined) { result += (typedChar === ' ' ? '<span class="type-space typeExtra"></span>' : '<span class="typeExtra type-char-animate">' + typedChar + '</span>'); continue; }
+                if (typedChar === undefined) { result += (correctChar === ' ' ? '<span class="space-hint">-</span>' : '<span class="type-placeholder">_</span>'); continue; }
+                if (correctChar === ' ') { result += (typedChar === ' ') ? '<span class="space-real"></span>' : '<span class="space-hint error">-</span>'; continue; }
+                if (typedChar === correctChar) {
+                  result += '<span class="typeGood type-char-animate">' + typedChar + '</span>';
+                  if(correctChar !== ' ') correctCount++;
+                } else {
+                  result += '<span class="typeBad type-char-animate">' + typedChar + '</span>';
+                }
+              }
+              overlay.innerHTML = result;
+              
+              // Điều chỉnh chiều cao sau khi update nội dung - Delay để đảm bảo render
+              setTimeout(adjustWrapperHeight, 20);
+              setTimeout(adjustWrapperHeight, 100); // Double check
+              
+              if (progressBar && totalChars > 0) progressBar.style.width = (correctCount / totalChars) * 100 + '%';
+            }
+            
+            overlay.innerHTML = '<span>' + createPlaceholder(correctAnswer) + '</span>';
+            
+            // Điều chỉnh chiều cao ban đầu - Delay nhiều hơn để đảm bảo render xong
+            setTimeout(adjustWrapperHeight, 100);
+            setTimeout(adjustWrapperHeight, 300); // Double check sau 300ms
+            
+            input.addEventListener('input', updateDisplay);
+
+            hintButton.addEventListener('click', () => {
+              var nextChar = correctAnswer[input.value.length];
+              if (nextChar) { input.value += nextChar; updateDisplay(); input.focus(); }
+            });
+
+          }, 100);
+        })();
+        </script>
+    </main>
+
+</div>
+{{/example}}

@@ -1,0 +1,188 @@
+{{#example}}
+<!-- ==================================================
+     CARD 4 BACK - HTML SẠCH (NO INLINE CSS)
+     ================================================== -->
+<div class="card-container immersive-container">
+
+  <main class="immersive-content">
+    
+    <!-- KHỐI REVIEW CHÍNH -->
+    <div class="review-container">
+      <!-- 1. Kết quả so sánh -->
+      {{type:example}}
+
+      <hr class="review-divider">
+
+      <!-- 2. Câu gốc, âm thanh và nghĩa -->
+      <div class="vidu-container">
+        <div class="vidu-row">
+          <div class="vidu">{{example}}</div>
+          <div class="sound">{{audio_example}}</div>
+        </div>
+        <div class="nghiavidu">{{example_translated}}</div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Nút và phần chi tiết giữ nguyên -->
+  <button id="toggle-details-button" class="immersive-button" onclick="toggleDetails()">
+    Phân tích từ vựng
+  </button>
+
+  <div id="details-wrapper" class="details-collapsible">
+    <hr class="immersive-divider">
+    <footer class="immersive-details">
+      <!-- ... (toàn bộ phần phân tích chi tiết giữ nguyên) ... -->
+      <div class="tuvung">
+        {{edit:word}}
+        <div class="word-meta-row">
+          {{#pos}}<div class="loaitu">{{pos}}</div>{{/pos}}
+          {{#transliteration}}<div class="phienam">[{{transliteration}}]</div>{{/transliteration}}
+          <div class="sound">{{audio_word}}</div>
+        </div>
+      </div>
+      <div class="nghia">{{meaning}}{{#explain}}<div class="giaithich">{{explain}}</div>{{/explain}}</div>
+      <!-- CẬP NHẬT: Gom tất cả vào 1 box "Mở rộng" -->
+      {{#collocation}}{{#synonym}}{{#antonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu chỉ có collocation -->
+      {{#collocation}}{{^synonym}}{{^antonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+        </div>
+      </details>
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu chỉ có synonym -->
+      {{#synonym}}{{^collocation}}{{^antonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/antonym}}{{/collocation}}{{/synonym}}
+      
+      <!-- Nếu chỉ có antonym -->
+      {{#antonym}}{{^collocation}}{{^synonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/synonym}}{{/collocation}}{{/antonym}}
+      
+      <!-- Nếu có collocation + synonym -->
+      {{#collocation}}{{#synonym}}{{^antonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/antonym}}{{/synonym}}{{/collocation}}
+      
+      <!-- Nếu có collocation + antonym -->
+      {{#collocation}}{{#antonym}}{{^synonym}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Cụm từ đi kèm</div>
+            <div class="related-value">{{collocation}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/synonym}}{{/antonym}}{{/collocation}}
+      
+      <!-- Nếu có synonym + antonym -->
+      {{#synonym}}{{#antonym}}{{^collocation}}
+      <details class="collapsible-section">
+        <summary>Mở rộng</summary>
+        <div class="collapsible-content">
+          <div class="related-item">
+            <div class="related-label">Đồng nghĩa</div>
+            <div class="related-value">{{synonym}}</div>
+          </div>
+          <div class="related-item">
+            <div class="related-label">Trái nghĩa</div>
+            <div class="related-value">{{antonym}}</div>
+          </div>
+        </div>
+      </details>
+      {{/collocation}}{{/antonym}}{{/synonym}}
+      {{#image}}<div class="hinhanh">{{image}}</div>{{/image}}
+    </footer>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      var details = document.getElementById('details-wrapper');
+      var button = document.getElementById('toggle-details-button');
+      var isVisible = details.classList.contains('is-visible');
+      if (isVisible) {
+        details.classList.remove('is-visible');
+        button.classList.remove('is-active');
+        button.textContent = 'Phân tích từ vựng';
+      } else {
+        details.classList.add('is-visible');
+        button.classList.add('is-active');
+        button.textContent = 'Ẩn chi tiết';
+      }
+    }
+  </script>
+
+</div>
+{{/example}}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <script role='smarterTypeField' src="_smarterTypeField.min2024-11-28_02-08-05.js" data-config="2025-11-19_17-35-31"></script>

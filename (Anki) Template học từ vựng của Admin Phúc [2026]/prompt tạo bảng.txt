@@ -1,0 +1,44 @@
+### **MASTER PROMPT TỐI ƯU V3.0 (Sẵn sàng để sử dụng)**
+
+**Nhiệm vụ:** Tạo một bảng Markdown từ vựng tiếng Hàn, tuân thủ nghiêm ngặt và tuyệt đối tất cả các quy tắc được liệt kê dưới đây.
+
+---
+
+#### **PHẦN 1: CÁC QUY TẮC BẮT BUỘC**
+
+**1. QUY TẮC ĐẦU RA CHUNG:**
+*   **Đầu ra duy nhất:** Chỉ trả về bảng Markdown.
+*   **Không văn bản thừa:** Tuyệt đối không thêm bất kỳ lời chào, câu giới thiệu, giải thích hay câu kết luận nào. Phản hồi phải bắt đầu bằng tiêu đề của bảng.
+
+**2. QUY TẮC CẤU TRÚC & ĐỊNH DẠNG BẢNG:**
+*   **Cấu trúc cột:** Bảng phải có chính xác 9 cột theo thứ tự:
+    `word | meaning | pos | explain | example | example_translated | collocation | synonym | antonym`
+*   **Định dạng chi tiết cho từng cột:**
+    *   `word`: Tiếng Hàn (Hangeul), văn bản thuần (không in đậm), không phiên âm.
+    *   `meaning`: Tiếng Việt, viết thường chữ cái đầu (trừ danh từ riêng).
+    *   `pos`: Tiếng Việt, viết thường (ví dụ: `động từ`, `tính từ`).
+    *   `explain`: Tiếng Việt, có thể dùng Markdown (**đậm**, *nghiêng*, `HTML cơ bản`,...) và emoji (📚, ❤️,...) để minh họa.
+    *   `example`: Câu tiếng Hàn, **in đậm** từ gốc ở cột `word`.
+    *   `example_translated`: Câu dịch tiếng Việt, **in đậm** phần dịch nghĩa tương ứng.
+    *   `collocation`, `synonym`, `antonym`: Nếu không có thông tin, **để ô đó hoàn toàn trống** (không điền `-` hay bất kỳ ký tự nào).
+
+**3. QUY TẮC XỬ LÝ DANH SÁCH ĐẦU VÀO:**
+*   **Xử lý toàn bộ:** Phải xử lý **TẤT CẢ** các từ/cụm từ trong danh sách đầu vào.
+*   **Mỗi từ một hàng:** Mỗi mục trong danh sách phải được tạo thành một hàng riêng biệt trong bảng.
+*   ⚠️ **RÀNG BUỘC TỐI QUAN TRỌNG (QUY TẮC ĐỘC LẬP):** Nếu danh sách đầu vào chứa cả Từ A và Từ B, nghiêm cấm tuyệt đối việc dùng Từ B làm `ví dụ`, `collocation`, `synonym`, hoặc `antonym` cho Từ A. Mỗi từ phải được xử lý độc lập với thông tin bổ trợ riêng của nó.
+
+---
+
+#### **PHẦN 2: VÍ DỤ MẪU HOÀN HẢO**
+
+*   Để tham khảo, đây là một hàng mẫu được định dạng chính xác cho từ `저가 항공사`:
+
+| word | meaning | pos | explain | example | example_translated | collocation | synonym | antonym |
+|---|---|---|---|---|---|---|---|---|
+| 저가 항공사 | hãng hàng không giá rẻ | danh từ | Một hãng hàng không cung cấp vé máy bay với giá <b>rẻ hơn</b> so với các hãng truyền thống, thường bằng cách cắt giảm các dịch vụ miễn phí. 💸 | 저는 국내 여행을 할 때 주로 **저가 항공사**를 이용해요. | Tôi chủ yếu sử dụng **hãng hàng không giá rẻ** khi đi du lịch trong nước. | 저가 항공사를 이용하다 - sử dụng hãng hàng không giá rẻ<br>저가 항공사 프로모션 - khuyến mãi của hãng hàng không giá rẻ | 저비용 항공사 (LCC) | 대형 항공사 (FSC) |
+
+---
+
+#### **PHẦN 3: DANH SÁCH TỪ VỰNG ĐẦU VÀO (INPUT)**
+
+*(Dán danh sách từ vựng của bạn vào ngay bên dưới dòng này. Mỗi từ/cụm từ trên một dòng.)*

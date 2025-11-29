@@ -1,0 +1,339 @@
+<!-- FRONT CARD - CARD 1 - NEW UI -->
+
+<div class="card-container card-front">
+
+  <!-- ==================================================
+       ADMIN PHÚC FROM ANKIVN
+       a.k.a TIẾNG HÀN PHÚC LEE
+       TRÙM DẠY ANKI
+       FB: https://www.facebook.com/tui.la.phuc747/
+       ================================================== -->
+
+  <main class="card-content">
+    <!-- Prompt Section: Nghĩa tiếng Việt -->
+    <div class="prompt-section">
+      <div class="prompt-label">Dịch sang tiếng Hàn</div>
+      <div class="nghia prompt-content">{{edit:meaning}}</div>
+      {{#explain}}
+      <div class="giaithich">{{hint:explain}}</div>
+      {{/explain}}
+      <div style="display: none;" class="sound-nghia">{{audio_meaning}}</div>
+    </div>
+
+    <!-- Hình ảnh gợi ý (nếu có) -->
+    {{#image}}
+    <div class="image-cue-container">
+      <div class="hinhanh">{{image}}</div>
+    </div>
+    {{/image}}
+
+    <!-- Typing Area -->
+    <div class="typing-area">
+      <div class="type-input-wrapper" onclick="document.getElementById('typeans').focus()">
+        {{type:word}}
+        <div id="typeans-overlay" class="typeans-overlay"></div>
+      </div>
+      <div class="type-progress-container">
+        <div id="type-progress-bar" class="type-progress-bar"></div>
+      </div>
+    </div>
+    
+    <!-- Đáp án ẩn để so sánh -->
+    <span id="correct-answer" style="display: none;">{{word}}</span>
+
+    <!-- Meta Row: Loại từ + Hint button -->
+    <div class="meta-row">
+      {{#pos}}
+      <span class="loaitu">{{pos}}</span>
+      {{/pos}}
+      <button id="type-hint-button" class="type-hint-button" aria-label="Gợi ý">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A7,7,0,0,0,5,9c0,2.38,1.19,4.47,3,5.74V17a1,1,0,0,0,1,1h6a1,1,0,0,0,1-1V14.74c1.81-1.27,3-3.36,3-5.74A7,7,0,0,0,12,2ZM9,21a1,1,0,0,0,1,1h4a1,1,0,0,0,1-1V20H9Z"/></svg>
+      </button>
+    </div>
+
+    <!-- TAGS -->
+    <div class="card-tags">
+      <span class="tag-badge">{{tag_1}}</span>
+      <span class="tag-badge">{{tag_2}}</span>
+      <span class="tag-badge">{{tag_3}}</span>
+      <span class="tag-badge">{{tag_4}}</span>
+    </div>
+  </main>
+
+</div>
+
+<!-- NÚT CÀI ĐẶT -->
+<button id="btnSettings" class="btn-settings" onclick="toggleSettings(event)">
+  <svg viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+</button>
+
+<!-- MENU CÀI ĐẶT -->
+<div class="settings-menu" id="settingsMenu">
+  <div class="menu-item">
+    <span class="menu-label">Chế độ tối</span>
+    <div class="toggle-switch" id="swNight" onclick="toggleConfig('nightMode')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Dịch ví dụ</span>
+    <div class="toggle-switch checked" id="swTrans" onclick="toggleConfig('showTrans')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Ví dụ</span>
+    <div class="toggle-switch checked" id="swExample" onclick="toggleConfig('showExample')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Giải thích</span>
+    <div class="toggle-switch checked" id="swExplain" onclick="toggleConfig('showExplain')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Mở rộng</span>
+    <div class="toggle-switch checked" id="swExpand" onclick="toggleConfig('autoExpand')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Hiện ảnh</span>
+    <div class="toggle-switch checked" id="swImage" onclick="toggleConfig('showImage')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Hiện Tags</span>
+    <div class="toggle-switch checked" id="swTags" onclick="toggleConfig('showTags')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Link FB (Footer)</span>
+    <div class="toggle-switch checked" id="swFb" onclick="toggleConfig('showFb')"></div>
+  </div>
+  <a href="https://www.facebook.com/tui.la.phuc747/" class="menu-link">Ghé thăm FB Phúc Lee</a>
+</div>
+
+<script>
+// --- CONFIGURATION & STATE MANAGEMENT ---
+var defaultConfig = {
+  nightMode: false,
+  showTrans: true,
+  showExample: true,
+  showExplain: true,
+  autoExpand: true,
+  showImage: true,
+  showTags: true,
+  showFb: true
+};
+
+var config = {};
+
+function loadConfig() {
+  try {
+    var stored = localStorage.getItem('anki-card-config');
+    if (stored) {
+      config = JSON.parse(stored);
+      // Merge with defaults for any missing keys
+      for (var key in defaultConfig) {
+        if (config[key] === undefined) {
+          config[key] = defaultConfig[key];
+        }
+      }
+    } else {
+      // First time - use defaults and save
+      config = JSON.parse(JSON.stringify(defaultConfig));
+      saveConfig();
+    }
+  } catch (e) {
+    console.log('Error loading config:', e);
+    config = JSON.parse(JSON.stringify(defaultConfig));
+  }
+  applyConfig();
+}
+
+function saveConfig() {
+  try {
+    localStorage.setItem('anki-card-config', JSON.stringify(config));
+  } catch (e) {
+    console.log('Error saving config:', e);
+  }
+}
+
+function applyConfig() {
+  // 1. Night Mode
+  document.body.classList.toggle('night-mode', config.nightMode);
+  updateSwitch('swNight', config.nightMode);
+
+  // 2. Show Translation
+  document.body.classList.toggle('hide-trans', !config.showTrans);
+  updateSwitch('swTrans', config.showTrans);
+
+  // 3. Show Example
+  document.body.classList.toggle('hide-example', !config.showExample);
+  updateSwitch('swExample', config.showExample);
+
+  // 4. Show Explanation
+  document.body.classList.toggle('hide-explain', !config.showExplain);
+  updateSwitch('swExplain', config.showExplain);
+
+  // 5. Auto Expand
+  var details = document.getElementById('expandDetails');
+  if(details) {
+    if(config.autoExpand) details.setAttribute('open', '');
+    else details.removeAttribute('open');
+  }
+  updateSwitch('swExpand', config.autoExpand);
+
+  // 6. Show Image
+  document.body.classList.toggle('hide-image', !config.showImage);
+  updateSwitch('swImage', config.showImage);
+
+  // 7. Show Tags
+  document.body.classList.toggle('hide-tags-card', !config.showTags);
+  updateSwitch('swTags', config.showTags);
+  
+  // 8. Show FB Link
+  document.body.classList.toggle('hide-fb', !config.showFb);
+  updateSwitch('swFb', config.showFb);
+}
+
+function updateSwitch(id, isActive) {
+  var el = document.getElementById(id);
+  if(el) {
+    if(isActive) el.classList.add('checked');
+    else el.classList.remove('checked');
+  }
+}
+
+function toggleConfig(key) {
+  config[key] = !config[key];
+  saveConfig();
+  applyConfig();
+}
+
+// --- SETTINGS MENU LOGIC ---
+function toggleSettings(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('settingsMenu');
+  menu.classList.toggle('active');
+}
+
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('settingsMenu');
+  var btn = document.getElementById('btnSettings');
+  
+  if (menu && menu.classList.contains('active')) {
+    if (!menu.contains(e.target) && btn && !btn.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var menu = document.getElementById('settingsMenu');
+    if(menu) menu.classList.remove('active');
+  }
+});
+
+// Init config
+loadConfig();
+</script>
+
+<script>
+(function() {
+  function initTypeAnswer() {
+    var input = document.querySelector('input#typeans');
+    var overlay = document.getElementById('typeans-overlay');
+    var progressBar = document.getElementById('type-progress-bar');
+    var correctAnswerSpan = document.getElementById('correct-answer');
+    var hintButton = document.getElementById('type-hint-button');
+    var wrapper = document.querySelector('.type-input-wrapper');
+
+    if (!input || !overlay) {
+      setTimeout(initTypeAnswer, 50);
+      return;
+    }
+
+    // Click vào wrapper sẽ focus input
+    if (wrapper) {
+      wrapper.addEventListener('click', function() {
+        input.focus();
+      });
+    }
+
+    var correctAnswer = '';
+    if (correctAnswerSpan) {
+      correctAnswer = (correctAnswerSpan.textContent || '').toString().trim();
+    }
+    
+    if (!correctAnswer) {
+      overlay.innerHTML = '<span class="type-placeholder active-cursor">_</span>';
+      setTimeout(initTypeAnswer, 100);
+      return;
+    }
+
+    var totalChars = correctAnswer.replace(/\s/g, '').length;
+    
+    function updateDisplay() {
+      var typed = input.value;
+      var html = '';
+      var correctCount = 0;
+      var maxLen = Math.max(correctAnswer.length, typed.length);
+
+      for (var i = 0; i < maxLen; i++) {
+        var cCorrect = correctAnswer[i];
+        var cTyped = typed[i];
+        var isCursor = (i === typed.length);
+        var cursorClass = isCursor ? ' active-cursor' : '';
+
+        if (cTyped === undefined) {
+          if (cCorrect === ' ') {
+            html += '<span class="space-hint' + cursorClass + '">-</span>';
+          } else {
+            html += '<span class="type-placeholder' + cursorClass + '">_</span>';
+          }
+        } else if (cCorrect === undefined) {
+          html += '<span class="typeExtra">' + cTyped + '</span>';
+        } else if (cCorrect === ' ') {
+          html += (cTyped === ' ') ? '<span class="space-real"></span>' : '<span class="space-hint error">-</span>';
+        } else if (cTyped === cCorrect) {
+          html += '<span class="typeGood">' + cTyped + '</span>';
+          correctCount++;
+        } else {
+          html += '<span class="typeBad">' + cTyped + '</span>';
+        }
+      }
+      
+      overlay.innerHTML = html;
+
+      if (progressBar && totalChars > 0) {
+        var percent = (correctCount / totalChars) * 100;
+        progressBar.style.width = Math.min(percent, 100) + '%';
+        progressBar.classList.toggle('progress-complete', percent >= 100);
+      }
+    }
+    
+    input.addEventListener('input', updateDisplay);
+    
+    input.addEventListener('blur', function() {
+      var active = overlay.querySelector('.active-cursor');
+      if (active) active.classList.remove('active-cursor');
+    });
+    
+    input.addEventListener('focus', updateDisplay);
+    input.focus();
+    updateDisplay();
+    
+    if (hintButton) {
+      hintButton.addEventListener('click', function() {
+        var len = input.value.length;
+        if (len < correctAnswer.length) {
+          input.value += correctAnswer[len];
+          updateDisplay();
+          input.focus();
+        }
+      });
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initTypeAnswer, 100);
+    });
+  } else {
+    setTimeout(initTypeAnswer, 100);
+  }
+})();
+</script>

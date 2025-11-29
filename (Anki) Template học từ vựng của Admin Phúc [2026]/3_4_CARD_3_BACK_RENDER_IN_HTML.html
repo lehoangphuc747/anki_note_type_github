@@ -1,0 +1,2926 @@
+<html class="win chrome" dir="ltr" data-bs-theme="light"><head>
+    <title>card layout</title>
+<base href="http://127.0.0.1:9874/"><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/webview.css"><style>
+body { zoom: 1; background-color: var(--canvas); }
+html { font-family:"Segoe UI"; }
+
+button { font-family: "Segoe UI"; }
+            
+:root { --canvas: #f5f5f5 }
+:root[class*=night-mode] { --canvas: #2c2c2c }
+</style><link rel="stylesheet" type="text/css" href="http://127.0.0.1:9874/_anki/css/reviewer.css">
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style><style id="MJX-CHTML-styles">
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("/_anki/js/vendor/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+</style></head>
+
+<body class="card card3 isWin">
+<script src="http://127.0.0.1:9874/_anki/js/webview.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/mathjax.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/vendor/mathjax/tex-chtml-full.js"></script>
+<script src="http://127.0.0.1:9874/_anki/js/reviewer.js"></script>
+
+<div id="_mark" hidden="">★</div>
+<div id="_flag" hidden="">⚑</div>
+
+<div id="qa" style="opacity: 1;"><style>/**************************************
+  CẤU TRÚC CHUNG - MINIMALIST CLEAN
+  Tối ưu cho học từ vựng và flashcard
+**************************************/
+
+/* Nền chung - Đơn giản, sạch */
+body {
+    background: #F8F9FA;
+    margin: 0;
+    padding: 8px;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+}
+
+/* Night Mode cho body */
+body.nightMode {
+    background: #1A1A1A;
+}
+
+/* Card-container - Container chính cho card content */
+.card-container {
+    font-size: 16px;
+    color: #212529;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    
+    /* === THAY ĐỔI Ở ĐÂY === */
+    width: 95%;             /* Rộng 95% màn hình */
+    max-width: 1100px;      /* Nhưng không bao giờ rộng quá 1100px */
+    /* ======================= */
+    
+    margin: 16px auto;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box; /* Thêm dòng này để padding không làm ảnh hưởng kích thước */
+}
+/* (Comment author metadata chỉ hiển thị trong code, không có CSS hiển thị) */
+
+/* Night Mode cho card-container */
+body.card.nightMode .card-container {
+    background: #252525;
+    border-color: #3A3A3A;
+    color: #E8E8E8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main content area - FLEX LAYOUT */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/**************************************
+  HIỆU ỨNG HOVER, TRANSITION - Tối giản
+**************************************/
+* {
+    transition: all 0.15s ease;
+}
+
+/**************************************
+  TỪ VỰNG, PHIÊN ÂM, LOẠI TỪ - CLEAN
+**************************************/
+
+/* Từ vựng - Lớn, rõ ràng, tập trung - Tối ưu cho mobile */
+.tuvung {
+    margin: 0;
+    padding: 8px 14px 12px 14px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #E91E63;
+    background: #FFFFFF;
+    border: 2px solid #F5F5F5;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1.25;
+}
+
+.tuvung > * { margin: 4px 0; }
+.tuvung > *:last-child { margin-bottom: 0; }
+
+.nightMode .tuvung {
+    color: #FF6B9D;
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+}
+
+/* Wrapper cho phienam, loaitu, sound - cùng hàng */
+.tuvung .word-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 4px 0;
+    min-height: 24px;
+}
+
+/* Phiên âm - Rõ ràng, dễ đọc - inline */
+.phienam {
+    font-size: 1.1rem;
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.nightMode .phienam {
+    color: #AAAAAA;
+}
+
+/* Loại từ - Nhỏ gọn, không làm phân tâm - inline */
+.loaitu {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #888;
+    margin: 0;
+    font-weight: 400;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.nightMode .loaitu {
+    color: #999;
+}
+
+/* Sound trong word-meta-row - căn giữa với phienam và loaitu */
+.word-meta-row .sound {
+    display: inline-flex;
+    margin: 0;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+/* Sound trong tuvung nhưng không trong word-meta-row (fallback) */
+.tuvung > .sound {
+    display: inline-flex;
+    margin: 4px 0;
+    vertical-align: middle;
+}
+
+/* Đáp án đúng - Hiển thị để check */
+.dapan-dung {
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: #F8F9FA;
+    border: 1px solid #E9ECEF;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem;
+    display: none;
+}
+
+.dapan-label {
+    color: #6C757D;
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.dapan-word {
+    color: #14C38E;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.nightMode .dapan-dung {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+}
+
+.nightMode .dapan-label {
+    color: #999;
+}
+
+.nightMode .dapan-word {
+    color: #6BCF8F;
+}
+
+/**************************************
+  NGHĨA & GIẢI THÍCH - Tối ưu đọc
+**************************************/
+
+/* Nghĩa - Rõ ràng, dễ đọc */
+.nghia {
+    position: relative;
+    margin: 0;
+    padding: 12px 14px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #212529;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.nightMode .nghia {
+    color: #E8E8E8;
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+}
+
+/* Giải thích - Phân biệt rõ với nghĩa */
+.giaithich {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #495057;
+    line-height: 1.5;
+    padding-top: 8px;
+    border-top: 1px solid #E9ECEF;
+    text-align: center;
+}
+
+.nightMode .giaithich {
+    color: #CCCCCC;
+    border-top-color: #3A3A3A;
+}
+
+/* ------------------------------------
+   HINT / EXPLAIN TOGGLE (a.hint + div.hint)
+--------------------------------------- */
+/* Clickable hint trigger */
+a.hint {
+    display: inline-block;
+    font-size: 0.95rem;
+    color: #E91E63;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+}
+a.hint:hover { color: #c2185b; background: rgba(233,30,99,0.06); }
+a.hint:active { transform: scale(0.98); }
+a.hint:focus-visible { outline: 2px solid rgba(233,30,99,0.35); outline-offset: 2px; border-radius: 6px; }
+
+/* Revealed hint content (the <div class="hint"> that gets display:block via inline JS) */
+div.hint {
+    display: none; /* will be set to block inline by onclick */
+    margin-top: 8px;
+    padding: 10px 12px;
+    background: #FFF5F8;
+    border: 1px dashed #E91E63;
+    border-radius: 8px;
+    color: #5f2a3a;
+    line-height: 1.6;
+}
+
+/* If shown via inline style, apply a subtle entrance */
+div.hint[style*="display: block"] { animation: hintFadeIn 180ms ease-out both; }
+
+@keyframes hintFadeIn {
+    from { opacity: 0; transform: translateY(-2px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.nightMode a.hint { color: #FF6B9D; }
+.nightMode a.hint:hover { background: rgba(255,107,157,0.12); color: #ff82aa; }
+.nightMode a.hint:focus-visible { outline-color: rgba(11, 9, 10, 0.45); }
+.nightMode div.hint {
+    background: rgba(255,107,157,0.08);
+    border-color: rgba(255,107,157,0.5);
+    color: #ffd7e6;
+}
+
+/**************************************
+  HÌNH ẢNH - Clean & Simple
+**************************************/
+.hinhanh {
+    margin: 12px 0;
+    text-align: center;
+}
+
+.hinhanh img {
+    max-width: 65%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    border: 1px solid #E0E0E0;
+}
+
+.hinhanh img:hover {
+    transform: scale(1.02);
+}
+
+.nightMode .hinhanh img {
+    border-color: #3A3A3A;
+}
+
+/* Responsive kích thước ảnh */
+@media screen and (max-width: 768px) {
+    .hinhanh img { max-width: 90%; }
+}
+@media screen and (max-width: 480px) {
+    .hinhanh img { max-width: 95%; }
+}
+@media screen and (min-width: 1024px) {
+    .hinhanh img { max-width: 60%; }
+}
+@media screen and (min-width: 1400px) {
+    .hinhanh img { max-width: 50%; }
+}
+
+/**************************************
+  VÍ DỤ - Clean & Readable
+**************************************/
+
+.vidu-container {
+    margin: 0;
+    padding: 16px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-left: 4px solid #E91E63;
+    border-radius: 8px;
+}
+
+/* Wrapper cho vidu và sound - cùng hàng */
+.vidu-container .vidu-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.vidu-container .vidu-row .vidu {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #212529;
+    margin: 0;
+    line-height: 1.6;
+    flex: 0 1 auto;
+}
+
+.vidu-container .vidu-row .vidu b,
+.vidu-container .vidu-row .vidu strong {
+    color: #E91E63;
+    font-weight: 700;
+}
+
+/* Sound trong vidu-row - căn giữa theo chiều dọc với text, sát text */
+.vidu-row .sound {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* Fallback: vidu không trong vidu-row */
+.vidu-container .vidu {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.vidu-container .vidu b,
+.vidu-container .vidu strong {
+    color: #E91E63;
+    font-weight: 700;
+}
+
+/* Sound trong vidu-container nhưng không trong vidu-row (fallback) */
+.vidu-container > .sound {
+    display: inline-flex;
+    margin: 0 0 8px 0;
+    vertical-align: middle;
+}
+
+.vidu-container .nghiavidu {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Night Mode */
+.nightMode .vidu-container {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+    border-left-color: #FF6B9D;
+}
+
+.nightMode .vidu-container .vidu {
+    color: #E8E8E8;
+}
+
+.nightMode .vidu-container .vidu b,
+.nightMode .vidu-container .vidu strong {
+    color: #FF6B9D;
+}
+
+.nightMode .vidu-container .nghiavidu {
+    color: #CCCCCC;
+}
+
+/**************************************
+  THÔNG TIN KHOÁ HỌC - Clean Header
+**************************************/
+
+/* Header - Nhỏ gọn, không làm phân tâm */
+.card-header {
+    font-size: 0.85rem;
+    color: #6C757D;
+    margin: -4px 0 0 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nightMode .card-header {
+    color: #888;
+}
+
+.tag1, .tag2, .tag3, .tag4 { margin: 0; }
+
+/* Footer - Clean */
+.card-footer {
+    margin: 4px 0 -4px 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Link info - Simple Button */
+.info {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    background: #1877F2;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.info:hover {
+    background: #166FE5;
+    transform: translateY(-1px);
+}
+
+/* Night Mode cho info */
+.nightMode .info {
+    background: #1877F2;
+}
+
+.nightMode .info:hover {
+    background: #166FE5;
+}
+
+/**************************************
+  ÂM THANH - Minimalist Button
+**************************************/
+
+/* Container sound - Minimal */
+.sound, .sound-nghia {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    vertical-align: middle;
+}
+
+/* Sound trong vidu-row - không có margin */
+.vidu-row .sound {
+    margin: 0;
+}
+
+/* Nút replay - Tối giản: chỉ icon play, không có circle thừa */
+.replay-button,
+.soundLink.replay-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    text-decoration: none;
+    border: 1px solid #E0E0E0;
+}
+
+.replay-button:hover,
+.soundLink.replay-button:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.1);
+    border-color: #D0D0D0;
+}
+
+.replay-button:active,
+.soundLink.replay-button:active {
+    transform: scale(0.95);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.replay-button:focus,
+.soundLink.replay-button:focus {
+    outline: 2px solid var(--border-focus, #3b82f6);
+    outline-offset: 2px;
+}
+
+/* SVG - Chỉ hiển thị icon play, ẩn circle */
+.replay-button svg,
+.soundLink.replay-button svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* Ẩn circle trong SVG - không cần vì button đã tròn */
+.replay-button svg circle,
+.soundLink.replay-button svg circle {
+    display: none;
+}
+
+/* Icon play - đơn giản */
+.replay-button svg path,
+.soundLink.replay-button svg path {
+    fill: #6B7280;
+    transition: fill 0.2s ease;
+}
+
+.replay-button:hover svg path,
+.soundLink.replay-button:hover svg path {
+    fill: #3B82F6;
+}
+
+/* Night Mode */
+.nightMode .replay-button,
+.nightMode .soundLink.replay-button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nightMode .replay-button:hover,
+.nightMode .soundLink.replay-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.nightMode .replay-button:active,
+.nightMode .soundLink.replay-button:active {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.nightMode .replay-button svg path,
+.nightMode .soundLink.replay-button svg path {
+    fill: #9CA3AF;
+}
+
+.nightMode .replay-button:hover svg path,
+.nightMode .soundLink.replay-button:hover svg path {
+    fill: #60A5FA;
+}
+
+/**************************************
+  TYPE IN THE ANSWER - Clean Input
+**************************************/
+
+/* Input text - Simple & Clean */
+input[type="text"] {
+    font-size: 1rem;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    margin: 8px auto;
+    padding: 14px 20px;
+    background: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    color: #212529;
+    transition: all 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #E91E63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+/* Night Mode cho input */
+.nightMode input[type="text"] {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+    color: #E8E8E8;
+}
+
+.nightMode input[type="text"]:focus {
+    border-color: #FF6B9D;
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.15);
+}
+
+/* Type input container */
+.type-input {
+    margin: 0;
+}
+
+/**************************************
+  TYPE ANSWER - Tối ưu hiển thị kết quả
+**************************************/
+
+/* Container chính cho kết quả gõ - Layout dọc để dễ so sánh */
+#typeans {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 16px 0;
+    padding: 10px 20px 20px 20px;
+    line-height: 1.8;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    min-height: 60px;
+    display: block;
+}
+
+.nightMode #typeans {
+    background: #2A2A2A;
+    border: none;
+}
+
+/* Input wrapper - Container cho input và overlay */
+.type-input-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+}
+
+/* Input field khi đang gõ - Background trong suốt để thấy overlay */
+input#typeans {
+    font-size: 2rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #E0E0E0;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 20px;
+    color: transparent; /* Text trong suốt để thấy overlay */
+    caret-color: transparent; /* Ẩn caret */
+    text-align: center;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: block;
+    line-height: 1.4;
+    letter-spacing: 0.08ch; /* compact hơn cho Latin, đồng bộ overlay */
+    font-variant-ligatures: none; /* avoid ligature width changes */
+    font-family: inherit; /* use same font as container */
+}
+
+input#typeans:focus {
+    outline: none;
+    border-color: #E91E63;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.1);
+}
+
+.nightMode input#typeans {
+    background-color: transparent;
+    border-color: #3A3A3A;
+    caret-color: transparent; /* Ẩn caret ở night mode */
+}
+
+/* Ẩn highlight khi bôi chọn để không thấy khối màu trên overlay */
+input#typeans::selection { background: transparent; color: transparent; }
+input#typeans::-moz-selection { background: transparent; color: transparent; }
+
+.nightMode input#typeans:focus {
+    border-color: #FF6B9D;
+    box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.15);
+}
+
+/* Overlay hiển thị real-time check - Nằm trong input - Phải có cùng padding với input */
+.typeans-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Cho phép click qua overlay vào input */
+    z-index: 1;
+    padding: 14px 20px; /* Phải khớp với padding của input#typeans */
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.08ch;
+}
+
+/* Khi đang gõ, đưa caret và overlay về căn trái */
+.type-input-wrapper.typing input#typeans { text-align: left; }
+.type-input-wrapper.typing .typeans-overlay { justify-content: flex-start; }
+
+/* Spans trong overlay - inline để hiển thị đúng */
+.typeans-overlay span {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 1ch; /* mỗi ký tự chiếm đúng 1 ký tự chiều rộng */
+    text-align: center;
+    margin: 0 0.08ch; /* compact hơn cho Latin */
+}
+
+/* Gợi ý dấu cách trực tiếp trên overlay: hiển thị '-' thay vì trống */
+.typeans-overlay .space-hint { color: #6C757D; }
+.typeans-overlay .space-hint.filled { color: #14C38E; }
+.typeans-overlay .space-hint.error { color: #FF6363; }
+.nightMode .typeans-overlay .space-hint { color: #999; }
+.nightMode .typeans-overlay .space-hint.filled { color: #6BCF8F; }
+.nightMode .typeans-overlay .space-hint.error { color: #FF6B6B; }
+
+/* Space đúng: ẩn ký hiệu, nhưng giữ bề rộng 1ch để canh thẳng hàng */
+.typeans-overlay .space-real {
+    display: inline-block;
+    min-width: 1ch;
+    margin: 0 0.08ch;
+    color: transparent;
+}
+
+/* Progress indicator container */
+.type-progress-container {
+    width: 100%;
+    height: 4px;
+    background-color: #E9ECEF;
+    border-radius: 2px;
+    margin: 8px 0 4px 0;
+    overflow: hidden;
+}
+
+.nightMode .type-progress-container {
+    background-color: #3A3A3A;
+}
+
+/* Progress bar */
+.type-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #1E88E5; /* xanh dương thống nhất */
+    border-radius: 2px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.type-progress-bar.progress-complete {
+    background: #1E88E5; /* giữ nguyên màu xanh dương */
+    animation: progressComplete 0.5s ease-out;
+}
+
+.type-progress-bar.progress-error {
+    background: #1E88E5; /* vẫn xanh dương */
+}
+
+.nightMode .type-progress-bar {
+    background: #42A5F5; /* xanh dương hơi sáng hơn cho night mode */
+}
+
+.nightMode .type-progress-bar.progress-complete {
+    background: #42A5F5;
+}
+
+.nightMode .type-progress-bar.progress-error {
+    background: #42A5F5;
+}
+
+/* Trạng thái nhập dấu cách */
+/* Dãy biểu thị số dấu cách cần/đã nhập (không chữ): "- - _ - -" */
+.space-indicators {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+.space-dot {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+.space-dot.future { color: #6C757D; }
+.space-dot.filled { color: #14C38E; }
+.space-dot.next { color: #0D6EFD; }
+
+.nightMode .space-dot.future { color: #999; }
+.nightMode .space-dot.filled { color: #6BCF8F; }
+.nightMode .space-dot.next { color: #79B1FF; }
+
+/* Ẩn trên mobile */
+@media (hover: none) and (pointer: coarse) {
+    .space-indicators { display: none !important; }
+}
+
+@keyframes progressComplete {
+    0% {
+        transform: scaleX(0.95);
+    }
+    50% {
+        transform: scaleX(1.02);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* Container hiển thị kết quả check real-time (backup - dưới input) */
+.typeans-display {
+    margin-top: 8px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+    min-height: 40px;
+    padding: 8px;
+    display: none; /* Ẩn mặc định vì đã có overlay trong input */
+}
+
+/* Đồng bộ khoảng cách/chiều rộng ký tự với overlay để không dính caret */
+.typeans-display span {
+    display: inline-block;
+    min-width: 1ch;
+    text-align: center;
+    margin: 0 0.15ch;
+}
+
+/* Placeholder - underscore chưa gõ */
+.type-placeholder {
+    color: #CCCCCC;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.nightMode .type-placeholder {
+    color: #555;
+}
+
+/* Mobile type hint - chỉ hiển thị trên mobile */
+.mobile-type-hint {
+    display: none; /* Ẩn mặc định */
+    margin: 8px 0;
+    padding: 10px 14px;
+    background: #F8F9FA;
+    border: 1px dashed #CCCCCC;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.mobile-type-hint-label {
+    font-size: 0.85rem;
+    color: #6C757D;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.mobile-type-hint-content {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.08ch;
+    line-height: 1.4;
+}
+
+.mobile-type-hint-content .type-placeholder {
+    color: #999;
+    font-weight: 400;
+    display: inline-block;
+    min-width: 1ch;
+    margin: 0 0.08ch;
+}
+
+.mobile-type-hint-content .space-hint {
+    color: #6C757D;
+    display: inline-block;
+    min-width: 1ch;
+    margin: 0 0.08ch;
+}
+
+/* Chỉ hiển thị trên iOS và Android - không dùng class mobile chung chung */
+/* Nếu có class iphone/ipad/android → hiển thị (dù có win) */
+body.iphone .mobile-type-hint,
+body.ipad .mobile-type-hint,
+body.android .mobile-type-hint,
+html.iphone .mobile-type-hint,
+html.ipad .mobile-type-hint,
+html.android .mobile-type-hint {
+    display: block !important;
+}
+
+/* Ẩn hint trên Windows (luôn ẩn trên Windows, dù có class nào khác) */
+/* Kiểm tra cả html.win và body.isWin/body.win */
+html.win .mobile-type-hint,
+html.win body .mobile-type-hint,
+body.win .mobile-type-hint,
+body.isWin .mobile-type-hint {
+    display: none !important;
+}
+
+/* Nhưng nếu là iOS/Android thì vẫn hiển thị (ưu tiên cao hơn) */
+html.win.iphone .mobile-type-hint,
+html.win.ipad .mobile-type-hint,
+html.win.android .mobile-type-hint,
+html.win body.iphone .mobile-type-hint,
+html.win body.ipad .mobile-type-hint,
+html.win body.android .mobile-type-hint,
+body.win.iphone .mobile-type-hint,
+body.win.ipad .mobile-type-hint,
+body.win.android .mobile-type-hint,
+body.isWin.iphone .mobile-type-hint,
+body.isWin.ipad .mobile-type-hint,
+body.isWin.android .mobile-type-hint {
+    display: block !important;
+}
+
+/* Night mode cho mobile hint */
+.nightMode .mobile-type-hint {
+    background: #2A2A2A;
+    border-color: #4A4A4A;
+}
+
+.nightMode .mobile-type-hint-label {
+    color: #999;
+}
+
+.nightMode .mobile-type-hint-content .type-placeholder {
+    color: #666;
+}
+
+.nightMode .mobile-type-hint-content .space-hint {
+    color: #888;
+}
+
+/* Khoảng trắng */
+.type-space {
+    display: inline-block;
+    width: 8px;
+}
+
+/* Ký tự đúng - real-time - Màu đậm hơn, giữ background và border */
+.typeans-display .typeGood,
+.typeans-overlay .typeGood {
+    color: #00796B;
+    background-color: #B6FFCE;
+    border: 1px solid #A3CFBB;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.nightMode .typeans-display .typeGood,
+.nightMode .typeans-overlay .typeGood {
+    color: #4DB6AC;
+    background-color: rgba(107, 207, 143, 0.15);
+    border-color: rgba(107, 207, 143, 0.3);
+}
+
+/* Ký tự sai - real-time - Màu đậm hơn, giữ background và border, thêm underline */
+.typeans-display .typeBad,
+.typeans-overlay .typeBad {
+    color: #C62828;
+    background-color: #FFE4C0;
+    border: 1px solid #FFD4A3;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+/* Ký tự nhập thừa (vàng) */
+.typeans-display .typeExtra,
+.typeans-overlay .typeExtra {
+    color: #B88600;
+    background-color: #FFF3CD;
+    border: 1px solid #FFE69C;
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+/* Space nhập thừa: vẫn 1ch nhưng có nền vàng để nhận biết */
+.typeans-overlay .type-space.typeExtra,
+.typeans-display .type-space.typeExtra {
+    background-color: #FFF3CD;
+    border: 1px solid #FFE69C;
+    border-radius: 4px;
+}
+
+.nightMode .typeans-display .typeBad,
+.nightMode .typeans-overlay .typeBad {
+    color: #E57373;
+    background-color: rgba(255, 107, 107, 0.15);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
+}
+
+.nightMode .typeans-display .typeExtra,
+.nightMode .typeans-overlay .typeExtra {
+    color: #FFD36E;
+    background-color: rgba(255, 211, 110, 0.14);
+    border-color: rgba(255, 211, 110, 0.35);
+}
+
+.nightMode .typeans-overlay .type-space.typeExtra,
+.nightMode .typeans-display .type-space.typeExtra {
+    background-color: rgba(255, 211, 110, 0.14);
+    border-color: rgba(255, 211, 110, 0.35);
+}
+
+/* Animation cho ký tự khi check */
+.type-char-animate {
+    animation: charCheck 0.3s ease-out;
+}
+
+@keyframes charCheck {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Placeholder trong overlay */
+.typeans-overlay .type-placeholder {
+    color: #CCCCCC;
+    font-weight: 400;
+    letter-spacing: 0.08ch;
+}
+
+.nightMode .typeans-overlay .type-placeholder {
+    color: #555;
+}
+
+/* Khoảng trắng trong overlay */
+.typeans-overlay .type-space {
+    display: inline-block;
+    width: 1ch; /* khoảng trắng rộng đúng 1 ký tự */
+    margin: 0 0.15ch; /* giữ khoảng cách ngang đồng đều */
+}
+
+/* Base style cho tất cả spans trong typeans */
+#typeans span {
+    display: inline-block;
+    padding: 4px 6px;
+    margin: 0 1px;
+    border-radius: 4px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: all 0.15s ease;
+}
+
+/* Ký tự ĐÚNG - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
+#typeans .typeGood {
+    color: #00796B;
+    background-color: #B6FFCE;
+    border: 1px solid #A3CFBB;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.nightMode #typeans .typeGood {
+    color: #4DB6AC;
+    background-color: rgba(107, 207, 143, 0.15);
+    border-color: rgba(107, 207, 143, 0.3);
+}
+
+/* Ký tự SAI - Màu đậm hơn, giữ background và border, thêm underline - Dùng chung cho Card 1 và Card 4 */
+#typeans .typeBad {
+    color: #C62828;
+    background-color: #FFE4C0;
+    border: 1px solid #FFD4A3;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.nightMode #typeans .typeBad {
+    color: #E57373;
+    background-color: rgba(255, 107, 107, 0.15);
+    border-color: rgba(255, 107, 107, 0.3);
+    text-decoration-color: rgba(229, 115, 115, 0.6);
+}
+
+/* Ký tự BỎ SÓT - Màu đậm hơn, giữ background và border - Dùng chung cho Card 1 và Card 4 */
+#typeans .typeMissed,
+#typeans .typePass {
+    color: #1E88E5;
+    background-color: #D6F4ED;
+    border: 1px solid #9EC5FE;
+    font-weight: 700;
+    padding: 2px 4px;
+    border-radius: 4px;
+    text-decoration: underline;
+}
+
+.nightMode #typeans .typeMissed,
+.nightMode #typeans .typePass {
+    color: #64B5F6;
+    background-color: rgba(107, 163, 255, 0.15);
+    border-color: rgba(107, 163, 255, 0.3);
+}
+
+/* Arrow - Không có background, chỉ hiển thị */
+#typearrow {
+    display: inline-block;
+    background-color: transparent !important;
+    padding: 0 8px;
+    margin: 0;
+    font-size: 1.8rem;
+    color: #6C757D;
+    font-weight: 400;
+    line-height: 1.4;
+    border: none !important;
+}
+
+.nightMode #typearrow {
+    color: #999;
+    background-color: transparent !important;
+}
+
+/* Line break styling - Tạo khoảng cách rõ ràng giữa các dòng để dễ so sánh */
+#typeans br {
+    display: block;
+    width: 100%;
+    height: 0;
+    margin: 12px 0;
+    content: "";
+}
+
+/* Khung hiển thị typed answer */
+.type {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    color: #212529;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.nightMode .type {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+    color: #E8E8E8;
+}
+
+/**************************************
+  HEADER & TAGS - Clean
+**************************************/
+
+/* Tags - Simple */
+.clickable-tags {
+    font-size: 0.85rem;
+    color: #6C757D;
+    margin: 8px 0 0 0;
+    text-align: center;
+    padding: 0;
+}
+
+.clickable-tags a {
+    background: #F8F9FA;
+    color: #E91E63;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #E0E0E0;
+    margin: 2px 3px;
+    font-size: 0.8rem;
+    display: inline-block;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nightMode .clickable-tags { color: #999; }
+.nightMode .clickable-tags a {
+    background: #2A2A2A;
+    color: #FF6B9D;
+    border-color: #3A3A3A;
+}
+
+/* Ẩn tags trên mobile như gợi ý của Anki */
+.mobile .clickable-tags { display: none; }
+
+/**************************************
+  COLLOCATION, SYNONYM, ANTONYM - Clean
+**************************************/
+
+.collapsible-section {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+    background: #F8F9FA;
+    border: 1px solid #E9ECEF;
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.collapsible-section summary {
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+    color: #495057;
+}
+
+.collapsible-section summary::marker {
+    display: none;
+}
+
+.collapsible-section summary::before {
+    content: '▶';
+    font-size: 0.7em;
+    margin-right: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.collapsible-section[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.collapsible-content {
+    padding: 0px 16px 14px 34px;
+    border-top: 1px solid #E9ECEF;
+    color: #E91E63;
+    font-weight: 500;
+    text-align: center;
+}
+
+.nightMode .collapsible-section {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+}
+.nightMode .collapsible-section summary {
+    color: #CCCCCC;
+}
+.nightMode .collapsible-content {
+    border-top-color: #3A3A3A;
+    color: #FF6B9D;
+}
+
+.collocation-label, .synonym-label, .antonym-label { display: none; }
+.collocation-value, .synonym-value, .antonym-value { display: block; }
+
+
+/**************************************
+  HÀNG CHỨA LOẠI TỪ & NÚT GỢI Ý
+**************************************/
+
+.word-meta-row-front {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    min-height: 32px;
+}
+
+.type-hint-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #E0E0E0;
+    background: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+.type-hint-button:hover {
+    background: #F8F9FA;
+    border-color: #D0D0D0;
+    transform: scale(1.1);
+}
+.type-hint-button svg {
+    width: 16px;
+    height: 16px;
+    fill: #FBC02D;
+}
+.nightMode .type-hint-button {
+    background: #2A2A2A;
+    border-color: #3A3A3A;
+}
+.nightMode .type-hint-button:hover {
+    background: #333;
+}
+
+/**************************************
+  HIỆU ỨNG RUNG
+**************************************/
+@keyframes shake-error {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(1px); }
+  30%, 50%, 70% { transform: translateX(-2px); }
+  40%, 60% { transform: translateX(2px); }
+}
+
+.shake-it {
+  animation: shake-error 0.4s ease-in-out both;
+}
+
+/**************************************
+  DESKTOP OPTIMIZATION - Wide Screen Layout
+**************************************/
+
+@media screen and (min-width: 1024px) {
+    .card-container {
+        max-width: 900px;
+        padding: 28px;
+        gap: 20px;
+    }
+    
+    .card-content {
+        gap: 16px;
+    }
+    
+    .tuvung {
+        font-size: 2.6rem;
+    }
+    
+    .nghia {
+        padding: 20px 18px;
+        font-size: 1.15rem;
+    }
+    
+    .vidu-container {
+        padding: 18px;
+    }
+    
+    .vidu-container .vidu {
+        font-size: 1.25rem;
+    }
+    
+    #typeans {
+        font-size: 2.2rem;
+        padding: 12px 24px 24px 24px;
+    }
+    
+    input#typeans {
+        font-size: 2.2rem;
+        padding: 16px 24px;
+    }
+    
+    .typeans-overlay {
+        font-size: 2.2rem;
+        padding: 16px 24px;
+    }
+    
+    #typeans span {
+        font-size: 2.2rem;
+    }
+    
+    #typearrow {
+        font-size: 2rem;
+    }
+    
+    .type-progress-container {
+        height: 5px;
+        margin: 10px 0 6px 0;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .card-container {
+        max-width: 1100px;
+        padding: 32px;
+        gap: 24px;
+    }
+    
+    .card-content {
+        gap: 20px;
+    }
+    
+    .tuvung {
+        font-size: 2.8rem;
+        padding: 12px 20px 20px 20px;
+    }
+    
+    .nghia {
+        padding: 22px 20px;
+        font-size: 1.2rem;
+    }
+    
+    .vidu-container {
+        padding: 20px;
+    }
+    
+    .vidu-container .vidu {
+        font-size: 1.3rem;
+    }
+    
+    #typeans {
+        font-size: 2.4rem;
+        padding: 14px 28px 28px 28px;
+    }
+    
+    input#typeans {
+        font-size: 2.4rem;
+        padding: 18px 28px;
+    }
+    
+    .typeans-overlay {
+        font-size: 2.4rem;
+        padding: 18px 28px;
+    }
+    
+    #typeans span {
+        font-size: 2.4rem;
+    }
+    
+    #typearrow {
+        font-size: 2.2rem;
+    }
+    
+    .type-progress-container {
+        height: 5px;
+        margin: 12px 0 8px 0;
+    }
+}
+
+/**************************************
+  MOBILE OPTIMIZATION - Responsive Design
+**************************************/
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 4px;
+    }
+    
+    .card-container {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .tuvung {
+        font-size: 2rem;
+        padding: 8px 12px 12px 12px;
+    }
+    
+    .tuvung > * {
+        margin: 4px 0;
+    }
+    
+    .phienam {
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    .loaitu {
+        font-size: 0.9rem;
+        margin: 0;
+    }
+    
+    .word-meta-row {
+        gap: 6px;
+        margin: 3px 0;
+    }
+    
+    .nghia {
+        padding: 14px 12px;
+        font-size: 1rem;
+    }
+    
+    .giaithich {
+        margin-top: 10px;
+        padding-top: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .vidu-container {
+        padding: 12px;
+    }
+    
+    .vidu-container .vidu-row {
+        gap: 2px;
+        margin-bottom: 6px;
+    }
+    
+    .vidu-container .vidu-row .vidu,
+    .vidu-container .vidu {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+    }
+    
+    
+    .vidu-container .nghiavidu {
+        font-size: 0.95rem;
+    }
+    
+    .collapsible-section summary {
+        padding: 12px;
+    }
+    .collapsible-content {
+      padding: 0 12px 12px 28px;
+      font-size: 0.95rem;
+    }
+    
+    .card-header {
+        font-size: 0.8rem;
+    }
+    
+    .info {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+    
+    #typeans {
+        font-size: 1.6rem;
+        padding: 8px 12px 16px 12px;
+        margin: 12px 0;
+    }
+    
+    input#typeans {
+        font-size: 1.6rem;
+        padding: 12px 16px;
+    }
+    
+    .typeans-overlay {
+        font-size: 1.6rem;
+        padding: 12px 16px;
+    }
+    
+    #typeans span {
+        font-size: 1.6rem;
+        padding: 3px 5px;
+        margin: 0 1px;
+    }
+    
+    #typearrow {
+        font-size: 1.5rem;
+        padding: 0 6px;
+    }
+    
+    .type-progress-container {
+        height: 3px;
+        margin: 6px 0 4px 0;
+    }
+    
+    #typeans br {
+        margin: 10px 0;
+    }
+    
+    .hinhanh img {
+        max-width: 80%;
+    }
+    
+    #tags {
+        font-size: 0.8rem;
+    }
+    
+    #tags code {
+        font-size: 0.8rem;
+        padding: 3px 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 2px;
+    }
+    
+    .card-container {
+        margin: 8px auto;
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .tuvung {
+        font-size: 1.8rem;
+        padding: 6px 10px 10px 10px;
+    }
+    
+    .nghia {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+    }
+    
+    .vidu-container {
+        padding: 10px;
+    }
+    
+    .vidu-container .vidu-row {
+        gap: 2px;
+    }
+    
+    .vidu-container .vidu-row .vidu,
+    .vidu-container .vidu {
+        font-size: 1rem;
+    }
+    
+    
+    .word-meta-row {
+        gap: 4px;
+    }
+    
+    .phienam {
+        font-size: 0.95rem;
+    }
+    
+    .loaitu {
+        font-size: 0.85rem;
+    }
+    
+    #typeans {
+        font-size: 1.4rem;
+        padding: 6px 10px 12px 10px;
+    }
+    
+    input#typeans {
+        font-size: 1.4rem;
+        padding: 10px 14px;
+    }
+    
+    .typeans-overlay {
+        font-size: 1.4rem;
+        padding: 10px 14px;
+    }
+    
+    #typeans span {
+        font-size: 1.4rem;
+        padding: 2px 4px;
+    }
+    
+    #typearrow {
+        font-size: 1.3rem;
+    }
+    
+    .type-progress-container {
+        height: 3px;
+        margin: 5px 0 3px 0;
+    }
+    
+    .collapsible-section summary {
+        padding: 10px;
+    }
+    .collapsible-content {
+      padding: 0 10px 10px 24px;
+      font-size: 0.9rem;
+    }
+}
+/**************************************************
+  CARD 3 - GIAO DIỆN IMMERSIVE CHO CÂU VÍ DỤ
+**************************************************/
+
+/* === Thiết lập Layout toàn màn hình === */
+body.card3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    align-items: center;
+    min-height: 95vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #F8F9FA; /* Nền xám nhạt */
+}
+
+/* Night Mode cho Card 3 */
+body.nightMode.card3 {
+    background: #1A1A1A; /* Nền tối cho night mode */
+}
+
+/* Ghi đè container mặc định để nó trong suốt và không có viền */
+body.card3 .card-container.immersive-container {
+    max-width: 900px; /* Giới hạn chiều rộng để câu không quá dài */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    gap: 24px;
+    text-align: center;
+}
+
+/* Ẩn header và footer không cần thiết trên Card 3 */
+body.card3 .card-header,
+body.card3 .card-footer {
+    display: none !important;
+}
+
+/* === Định dạng các thành phần chính === */
+
+/* Lời nhắc nhỏ ở mặt trước */
+body.card3 .immersive-prompt {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 12px;
+    font-style: italic;
+}
+body.nightMode.card3 .immersive-prompt {
+    color: #777;
+}
+
+/* Container của câu ví dụ */
+body.card3 .vidu-container {
+    border: none;
+    background: transparent;
+    padding: 0;
+    border-left: none;
+}
+
+/* Câu ví dụ - Phần quan trọng nhất */
+body.card3 .vidu-container .vidu {
+    font-size: 2.8rem; /* Cỡ chữ lớn, nổi bật */
+    font-weight: 600;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+}
+body.nightMode.card3 .vidu-container .vidu {
+    color: #E8E8E8;
+}
+
+/* Căn giữa hàng chứa câu và nút audio */
+body.card3 .vidu-row {
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+}
+
+/* Nghĩa của câu ví dụ */
+body.card3 .nghiavidu {
+    font-size: 1.5rem;
+    color: #495057;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+body.nightMode.card3 .nghiavidu {
+    color: #CCCCCC;
+}
+
+/* Đường kẻ phân cách ở mặt sau */
+body.card3 .immersive-divider {
+    width: 80px;
+    border: none;
+    border-top: 2px solid #E0E0E0;
+    margin: 20px auto;
+}
+body.nightMode.card3 .immersive-divider {
+    border-top-color: #3A3A3A;
+}
+
+/* Container cho phần chi tiết ở mặt sau */
+body.card3 .immersive-details {
+    width: 100%;
+    max-width: 650px; /* Giữ chiều rộng quen thuộc cho phần chi tiết */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* === Điều chỉnh cho màn hình nhỏ (Mobile) === */
+@media screen and (max-width: 768px) {
+    body.card3 .vidu-container .vidu {
+        font-size: 2.2rem; /* Giảm cỡ chữ cho dễ đọc */
+    }
+    body.card3 .nghiavidu {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body.card3 {
+        padding: 10px;
+    }
+    body.card3 .vidu-container .vidu {
+        font-size: 1.8rem;
+    }
+    body.card3 .nghiavidu {
+        font-size: 1rem;
+    }
+}
+
+/**************************************************
+  CARD 3 - ULTRA-FOCUS MODE (NÂNG CẤP)
+**************************************************/
+
+/* === Hiệu ứng xuất hiện mượt mà === */
+@keyframes fadeInFocus {
+  from { 
+    opacity: 0; 
+    transform: translateY(8px); /* Hơi đi lên một chút */
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+/* Áp dụng hiệu ứng cho nội dung chính khi thẻ xuất hiện */
+body.card3 .card-front .immersive-content {
+    animation: fadeInFocus 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+/* === Tối giản hóa mặt trước === */
+
+/* Lời nhắc "Đọc & Nghe" sẽ tự động mờ đi sau 2 giây */
+@keyframes fadeOutGently {
+  to { opacity: 0; }
+}
+
+body.card3 .immersive-prompt {
+    animation: fadeOutGently 0.5s ease-out 2s both; /* Bắt đầu mờ sau 2 giây */
+}
+
+/* Nút âm thanh sẽ hơi mờ, chỉ rõ lên khi di chuột vào */
+body.card3 .vidu-row .sound .replay-button {
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+body.card3 .vidu-row .sound .replay-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* === Tạo nhịp điệu cho mặt sau === */
+
+/* 1. Phần câu ví dụ và nghĩa sẽ xuất hiện trước */
+body.card3 .card-back .immersive-content {
+    animation: fadeInFocus 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+/* 2. Phần phân tích chi tiết sẽ xuất hiện sau một khoảng trễ */
+body.card3 .card-back .immersive-divider,
+body.card3 .card-back .immersive-details {
+    animation: fadeInFocus 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) 0.3s both; /* Trễ 0.3 giây */
+}
+
+/* === Tinh chỉnh thẩm mỹ === */
+
+/* Thay đường kẻ đậm bằng một đường kẻ gradient mềm mại hơn */
+body.card3 .immersive-divider {
+    width: 120px;
+    height: 1px;
+    border: none;
+    background: linear-gradient(to right, transparent, #E0E0E0, transparent);
+    margin: 30px auto; /* Tăng khoảng cách */
+}
+body.nightMode.card3 .immersive-divider {
+    background: linear-gradient(to right, transparent, #444, transparent);
+}
+
+/* Tăng kích thước chữ của câu ví dụ để thực sự nổi bật */
+body.card3 .vidu-container .vidu {
+    font-size: 3rem;
+}
+body.card3 .nghiavidu {
+    font-size: 1.6rem;
+}
+
+/* Responsive cho mobile */
+@media screen and (max-width: 768px) {
+    body.card3 .vidu-container .vidu {
+        font-size: 2.4rem;
+    }
+    body.card3 .nghiavidu {
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    body.card3 .vidu-container .vidu {
+        font-size: 2rem;
+    }
+    body.card3 .nghiavidu {
+        font-size: 1.1rem;
+    }
+}
+/**************************************************
+  CARD 3 - TỐI ƯU MẶT SAU (ẨN CHI TIẾT)
+**************************************************/
+
+/* Nút bấm "Phân tích từ vựng" */
+.immersive-button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #495057;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.immersive-button:hover {
+    background-color: #F8F9FA;
+    border-color: #D0D0D0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+.nightMode .immersive-button {
+    background-color: #2A2A2A;
+    border-color: #3A3A3A;
+    color: #CCCCCC;
+}
+.nightMode .immersive-button:hover {
+    background-color: #333;
+    border-color: #555;
+}
+
+/* Container chứa phần chi tiết ẩn */
+#details-wrapper {
+    width: 100%; /* Đảm bảo nó chiếm đủ không gian khi hiện ra */
+    animation: fadeInFocus 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+}
+
+/**************************************************
+  CARD 3 - TỐI ƯU MẶT SAU (TOGGLE HOÀN CHỈNH)
+**************************************************/
+
+/* Nút bấm "Phân tích từ vựng" */
+.immersive-button {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #495057;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.immersive-button:hover {
+    background-color: #F8F9FA;
+    border-color: #D0D0D0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.07);
+}
+/* Kiểu của nút khi đang "mở" */
+.immersive-button.is-active {
+    background-color: #F8F9FA;
+    color: #E91E63;
+}
+
+.nightMode .immersive-button {
+    background-color: #2A2A2A;
+    border-color: #3A3A3A;
+    color: #CCCCCC;
+}
+.nightMode .immersive-button:hover {
+    background-color: #333;
+    border-color: #555;
+}
+.nightMode .immersive-button.is-active {
+    background-color: #333;
+    color: #FF6B9D;
+}
+
+
+/* Container chứa phần chi tiết ẩn */
+.details-collapsible {
+    width: 100%;
+    overflow: hidden; /* Quan trọng để hiệu ứng max-height hoạt động */
+    
+    /* Trạng thái mặc định: ẩn */
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    
+    /* Hiệu ứng chuyển động */
+    transition: max-height 0.5s ease-in-out, 
+                opacity 0.4s ease-in-out, 
+                transform 0.4s ease-in-out;
+}
+/* Trạng thái khi được mở ra */
+.details-collapsible.is-visible {
+    max-height: 1500px; /* Một giá trị đủ lớn để chứa mọi nội dung */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/**************************************************
+  CARD 3 - HOÀN THIỆN CĂN GIỮA NGHĨA VÍ DỤ
+**************************************************/
+
+/* Căn giữa phần nghĩa của ví dụ */
+body.card3 .nghiavidu {
+    text-align: center;
+}
+
+/**************************************************
+  CARD 3 - TỐI ƯU CHIỀU RỘNG MÀN HÌNH LỚN
+**************************************************/
+
+/* 1. Cho phép container chính của Card 3 "tràn" ra theo màn hình */
+
+
+/* 2. Giới hạn chiều rộng tối đa trên các màn hình siêu rộng (ultrawide) */
+@media screen and (min-width: 1600px) {
+    body.card3 .card-container.immersive-container {
+        max-width: 1400px; /* Ngăn câu trở nên quá dài, khó đọc */
+    }
+}
+
+/* 3. QUAN TRỌNG: Giữ cho phần phân tích chi tiết bên dưới gọn gàng */
+body.card3 .immersive-details {
+    max-width: 700px; /* Vẫn giữ chiều rộng dễ đọc cho phần text */
+    margin-left: auto;
+    margin-right: auto;
+}
+/**************************************************
+  CARD 3 - CĂN GIỮA NÚT ÂM THANH
+**************************************************/
+
+/* Thay đổi layout của hàng chứa ví dụ thành cột dọc */
+body.card3 .vidu-row {
+    flex-direction: column; /* Xếp các mục theo chiều dọc */
+    gap: 12px; /* Tạo khoảng cách hợp lý giữa câu và nút */
+}
+
+/* Tinh chỉnh lại nút âm thanh cho hài hòa hơn trong layout mới */
+body.card3 .vidu-row .sound .replay-button {
+    transform: scale(1.1); /* Cho nút to hơn một chút để cân xứng */
+    opacity: 0.6; /* Giữ độ mờ vừa phải */
+}
+body.card3 .vidu-row .sound .replay-button:hover {
+    opacity: 1;
+    transform: scale(1.2); /* Phóng to hơn khi hover để dễ tương tác */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************
+  CARD 4 - FINAL UPDATE (FIX CĂN GIỮA & ĐỘ NÉT)
+**************************************************/
+
+/* === BƯỚC 1: SỬA LỖI CĂN GIỮA === */
+
+/* Áp dụng layout toàn màn hình */
+body.card4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Cho container chính chiếm đúng chiều rộng mong muốn và tự căn giữa */
+body.card4 .card-container.immersive-container {
+    width: 90vw;       /* << LUÔN RỘNG 90% MÀN HÌNH */
+    max-width: 1400px; /* << NHƯNG KHÔNG QUÁ 1100PX */
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    gap: 24px;
+    text-align: center;
+}
+
+/* Ẩn header/footer không cần thiết */
+body.card4 .card-header,
+body.card4 .card-footer {
+    display: none !important;
+}
+
+/* Khung gõ sẽ tự động vừa với container đã được căn giữa hoàn hảo */
+body.card4 #typing-interface {
+    width: 100%; /* << Cho khung gõ chiếm 100% chiều rộng của container cha */
+}
+
+
+/* === BƯỚC 2: SỬA LỖI CHỮ MỜ & CĂN CHỈNH === */
+
+/* Font size chung của khung gõ */
+body.card4 .tuvung {
+    font-size: 1.8rem;
+}
+
+/* Input thật: Đuổi chữ ra khỏi màn hình và hiện lại con trỏ */
+body.card4 input#typeans {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 16px 20px;
+    letter-spacing: 0.05ch;
+    text-align: center; /* <<< CĂN GIỮA */
+    color: transparent !important; /* Dùng !important để chắc chắn nó luôn trong suốt */
+    text-indent: -9999px;      /* QUAN TRỌNG: Đẩy chữ thật ra khỏi tầm nhìn */
+    caret-color: transparent !important;         /* QUAN TRỌNG: Cho con trỏ hiện lại với màu tối */
+}
+.nightMode body.card4 input#typeans {
+    caret-color: transparent !important; /* Con trỏ màu sáng cho nền tối */
+}
+
+/* Overlay (lớp chữ màu) */
+body.card4 .typeans-overlay {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 16px 20px;
+    letter-spacing: 0.05ch;
+    justify-content: center; /* <<< CĂN GIỮA */
+}
+
+/* === BƯỚC 3: TĂNG ĐỘ NÉT CHO CHỮ VÀ GỢI Ý === */
+
+/* Lời nhắc "Nghe và chép lại" rõ hơn */
+body.card4 .immersive-prompt {
+    opacity: 1;
+    color: #78909C;
+    font-weight: 500;
+}
+.nightMode body.card4 .immersive-prompt {
+    color: #90A4AE;
+}
+
+/* Placeholder (gạch dưới) */
+.typeans-overlay .type-placeholder {
+    color: #B0BEC5; 
+    font-weight: 600;
+}
+
+/* Gợi ý dấu cách (gạch ngang) */
+.typeans-overlay .space-hint {
+    color: #78909C; 
+    font-weight: 600;
+}
+
+/* CHỮ ĐÚNG: Xóa nền, dùng màu đậm, BOLD */
+.typeans-overlay .typeGood {
+    color: #00796B; /* Xanh đậm hơn nữa */
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+}
+
+/* CHỮ SAI: Xóa nền, dùng màu đậm, BOLD và gạch chân */
+.typeans-overlay .typeBad {
+    color: #C62828; /* Đỏ đậm hơn nữa */
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+/* CHỮ THỪA */
+.typeans-overlay .typeExtra {
+    color: #EF6C00; /* Cam đậm hơn nữa */
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+}
+
+/* --- NIGHT MODE --- */
+.nightMode .typeans-overlay .type-placeholder { color: #546E7A; }
+.nightMode .typeans-overlay .space-hint { color: #78909C; }
+.nightMode .typeans-overlay .typeGood { color: #4DB6AC; }
+.nightMode .typeans-overlay .typeBad {
+    color: #E57373;
+    text-decoration-color: rgba(229, 115, 115, 0.6);
+}
+.nightMode .typeans-overlay .typeExtra { color: #FFB74D; }/**************************************************
+  CARD 4 - FINAL UPDATE (FIX CĂN GIỮA & ĐỘ NÉT & ẨN CURSOR)
+**************************************************/
+
+/* === BƯỚC 1: SỬA LỖI CĂN GIỮA === */
+body.card4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+body.card4 .card-container.immersive-container {
+    width: 90vw;
+    max-width: 1400px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    gap: 24px;
+    text-align: center;
+}
+
+body.card4 .card-header,
+body.card4 .card-footer {
+    display: none !important;
+}
+
+body.card4 #typing-interface {
+    width: 100%;
+}
+
+
+/* === BƯỚC 2: SỬA LỖI CHỮ MỜ & CĂN CHỈNH === */
+body.card4 .tuvung {
+    font-size: 1.8rem;
+}
+
+body.card4 input#typeans {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 16px 20px;
+    letter-spacing: 0.05ch;
+    text-align: center;
+    color: transparent !important;
+    text-indent: -9999px;
+    caret-color: transparent !important; /* <<< FIX CUỐI CÙNG: ẨN CON TRỎ */
+}
+
+/* Anki trên một số phiên bản có thể ghi đè, nên ta không cần nightMode riêng cho caret */
+
+body.card4 .typeans-overlay {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    padding: 16px 20px;
+    letter-spacing: 0.05ch;
+    justify-content: center;
+}
+
+/* === BƯỚC 3: TĂNG ĐỘ NÉT CHO CHỮ VÀ GỢI Ý === */
+body.card4 .immersive-prompt {
+    opacity: 1;
+    color: #78909C;
+    font-weight: 500;
+}
+.nightMode body.card4 .immersive-prompt {
+    color: #90A4AE;
+}
+
+.typeans-overlay .type-placeholder {
+    color: #B0BEC5; 
+    font-weight: 600;
+}
+.typeans-overlay .space-hint {
+    color: #78909C; 
+    font-weight: 600;
+}
+
+.typeans-overlay .typeGood {
+    color: #00796B;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+}
+.typeans-overlay .typeBad {
+    color: #C62828;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+    text-decoration: underline;
+    text-decoration-color: rgba(198, 40, 40, 0.6);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+.typeans-overlay .typeExtra {
+    color: #EF6C00;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    padding: 2px 0;
+}
+
+/* --- NIGHT MODE --- */
+.nightMode .typeans-overlay .type-placeholder { color: #546E7A; }
+.nightMode .typeans-overlay .space-hint { color: #78909C; }
+.nightMode .typeans-overlay .typeGood { color: #4DB6AC; }
+.nightMode .typeans-overlay .typeBad {
+    color: #E57373;
+    text-decoration-color: rgba(229, 115, 115, 0.6);
+}
+.nightMode .typeans-overlay .typeExtra { color: #FFA726; }
+
+/**************************************************
+  CARD 4 - TỐI ƯU MẶT SAU (FINAL CSS)
+**************************************************/
+
+/* Container chính cho phần review */
+body.card4 .review-container {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    box-sizing: border-box;
+}
+
+/* Khối so sánh gõ chữ - Card 4 dùng chung #typeans với Card 1 */
+body.card4 #typeans {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    word-break: break-word;
+    font-weight: 500;
+}
+body.card4 #typeans > div,
+body.card4 #typeans code { font-family: inherit !important; font-size: inherit !important; }
+
+/* Đường kẻ phân cách */
+body.card4 .review-divider {
+    border: none;
+    border-top: 1px solid #E0E0E0;
+    width: 80%;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+/* GHI ĐÈ .vidu-container CHỈ KHI NÓ NẰM TRONG REVIEW-CONTAINER */
+body.card4 .review-container .vidu-container {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 12px;
+    box-shadow: none;
+    border-left: none;
+}
+
+/* Căn giữa hàng chứa câu ví dụ */
+body.card4 .review-container .vidu-row {
+    justify-content: center;
+}
+
+/* Chỉnh lại font-size cho câu ví dụ */
+body.card4 .review-container .vidu {
+    font-size: 1.8rem;
+}
+
+/* Chỉnh lại font-size và margin cho phần dịch nghĩa */
+body.card4 .review-container .nghiavidu {
+    font-size: 1.3rem;
+    margin-top: 8px;
+    text-align: center;
+}
+
+/* --- NIGHT MODE --- */
+.nightMode body.card4 .review-container { background: #2A2A2A; border-color: #3A3A3A; }
+/* Card 4 dùng chung CSS với Card 1 cho #typeans */
+.nightMode body.card4 .review-divider { border-top-color: #3A3A3A; }
+.nightMode body.card4 .review-container .nghiavidu { color: #BDBDBD; }</style>
+<div class="card-container immersive-container">
+
+  <!-- Phần nội dung chính, luôn hiển thị -->
+  <main class="immersive-content">
+    
+    <!-- Ví dụ và nghĩa của ví dụ -->
+    <div class="vidu-container">
+      <div class="vidu-row">
+        <div class="vidu"><p>저는 <strong>매직기로 머리를 폈어요</strong>.</p></div>
+        <div class="sound">
+<a class="replay-button soundLink" href="#" onclick="pycmd('play:a:0'); return false;" draggable="false">
+    <svg class="playImage" viewBox="0 0 64 64" version="1.1">
+        <circle cx="32" cy="32" r="29"></circle>
+        <path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
+    </svg>
+</a></div>
+      </div>
+      <div class="nghiavidu"><p>Tôi <strong>duỗi tóc bằng máy duỗi</strong>.</p></div>
+    </div>
+
+  </main>
+
+  <!-- Nút bấm để hiển thị/ẩn chi tiết -->
+  <button id="toggle-details-button" class="immersive-button" onclick="toggleDetails()">
+    Phân tích từ vựng
+  </button>
+
+  <!-- Phần chi tiết, mặc định ẩn và có thể đóng/mở -->
+  <div id="details-wrapper" class="details-collapsible">
+    <!-- Đường kẻ phân cách -->
+    <hr class="immersive-divider">
+
+    <!-- Phần "phân tích" chi tiết -->
+    <footer class="immersive-details">
+      <!-- Từ vựng chính -->
+      <div class="tuvung">
+        매직기로 머리를 펴다
+        <div class="word-meta-row">
+          <div class="loaitu">động từ</div>
+          
+          <div class="sound">
+<a class="replay-button soundLink" href="#" onclick="pycmd('play:a:1'); return false;" draggable="false">
+    <svg class="playImage" viewBox="0 0 64 64" version="1.1">
+        <circle cx="32" cy="32" r="29"></circle>
+        <path d="M56.502,32.301l-37.502,20.101l0.329,-40.804l37.173,20.703Z"></path>
+    </svg>
+</a></div>
+        </div>
+      </div>
+
+      <!-- Nghĩa của từ -->
+      <div class="nghia">
+        duỗi tóc bằng máy duỗi
+        <div class="giaithich"><p>Làm tóc thẳng hoàn toàn bằng máy duỗi nhiệt.</p></div>
+      </div>
+
+      <!-- Các thông tin phụ -->
+      
+
+      
+
+      
+      
+      <!-- Hình ảnh -->
+      
+
+    </footer>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      var details = document.getElementById('details-wrapper');
+      var button = document.getElementById('toggle-details-button');
+      
+      // Kiểm tra xem phần chi tiết có đang được hiển thị không
+      var isVisible = details.classList.contains('is-visible');
+      
+      if (isVisible) {
+        // Nếu đang hiện -> ẩn đi
+        details.classList.remove('is-visible');
+        button.classList.remove('is-active');
+        button.textContent = 'Phân tích từ vựng';
+      } else {
+        // Nếu đang ẩn -> hiện ra
+        details.classList.add('is-visible');
+        button.classList.add('is-active');
+        button.textContent = 'Ẩn chi tiết';
+      }
+    }
+  </script>
+
+</div>
+</div>
+
+
+</body></html>

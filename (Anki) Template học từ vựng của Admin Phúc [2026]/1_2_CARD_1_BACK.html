@@ -1,0 +1,379 @@
+<!-- BACK CARD 1 - NEW UI -->
+
+<div class="card-container card-back">
+  
+  <!-- Modal xem ảnh full -->
+  <div id="image-modal" class="image-modal-overlay" onclick="closeImageModal()">
+    <img id="modal-image" src="" alt="Full image">
+  </div>
+
+  <main class="card-content">
+    <!-- 1. RESULT: Kết quả gõ -->
+    <div class="result-section">
+      {{type:word}}
+    </div>
+
+    <!-- 2. WORD INFO ROW: Thumbnail + Audio + IPA + Loại từ -->
+    <div class="word-info-row">
+      {{#image}}
+      <div class="mini-thumb" onclick="openImageModal(this)">
+        <div class="hinhanh">{{image}}</div>
+      </div>
+      {{/image}}
+      <div class="sound">{{audio_word}}</div>
+      {{#transliteration}}
+      <span class="ipa">/{{transliteration}}/</span>
+      {{/transliteration}}
+      {{#pos}}
+      <span class="pos-badge">{{pos}}</span>
+      {{/pos}}
+    </div>
+
+    <!-- 3. MEANING -->
+    <div class="meaning-section">
+      <div class="main-meaning">{{edit:meaning}}</div>
+      {{#explain}}
+      <div class="sub-meaning">{{explain}}</div>
+      {{/explain}}
+    </div>
+
+    <!-- 4. EXAMPLE -->
+    {{#example}}
+    <div class="example-box">
+      <div class="ex-text">
+        {{example}} <span class="ex-audio">{{audio_example}}</span>
+      </div>
+      <div class="ex-trans">{{example_translated}}</div>
+    </div>
+    {{/example}}
+
+    <!-- 5. EXPAND: Collocation, Synonym, Antonym -->
+    {{#collocation}}{{#synonym}}{{#antonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info collocation">
+          <span class="label">Cụm từ đi kèm</span>
+          <span class="val">{{collocation}}</span>
+        </div>
+        <div class="row-info">
+          <span class="label">Đồng nghĩa</span>
+          <span class="val">{{synonym}}</span>
+        </div>
+        <div class="row-info">
+          <span class="label">Trái nghĩa</span>
+          <span class="val">{{antonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/antonym}}{{/synonym}}{{/collocation}}
+    
+    {{#collocation}}{{^synonym}}{{^antonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info collocation">
+          <span class="label">Cụm từ đi kèm</span>
+          <span class="val">{{collocation}}</span>
+        </div>
+      </div>
+    </details>
+    {{/antonym}}{{/synonym}}{{/collocation}}
+    
+    {{#synonym}}{{^collocation}}{{^antonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info">
+          <span class="label">Đồng nghĩa</span>
+          <span class="val">{{synonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/antonym}}{{/collocation}}{{/synonym}}
+    
+    {{#antonym}}{{^collocation}}{{^synonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info">
+          <span class="label">Trái nghĩa</span>
+          <span class="val">{{antonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/synonym}}{{/collocation}}{{/antonym}}
+    
+    {{#collocation}}{{#synonym}}{{^antonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info collocation">
+          <span class="label">Cụm từ đi kèm</span>
+          <span class="val">{{collocation}}</span>
+        </div>
+        <div class="row-info">
+          <span class="label">Đồng nghĩa</span>
+          <span class="val">{{synonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/antonym}}{{/synonym}}{{/collocation}}
+    
+    {{#collocation}}{{#antonym}}{{^synonym}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info collocation">
+          <span class="label">Cụm từ đi kèm</span>
+          <span class="val">{{collocation}}</span>
+        </div>
+        <div class="row-info">
+          <span class="label">Trái nghĩa</span>
+          <span class="val">{{antonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/synonym}}{{/antonym}}{{/collocation}}
+    
+    {{#synonym}}{{#antonym}}{{^collocation}}
+    <details class="expand" id="expandDetails" open>
+      <summary class="expand-trigger">Mở rộng</summary>
+      <div class="expand-content">
+        <div class="row-info">
+          <span class="label">Đồng nghĩa</span>
+          <span class="val">{{synonym}}</span>
+        </div>
+        <div class="row-info">
+          <span class="label">Trái nghĩa</span>
+          <span class="val">{{antonym}}</span>
+        </div>
+      </div>
+    </details>
+    {{/collocation}}{{/antonym}}{{/synonym}}
+    
+    <!-- 6. TAGS -->
+    <div class="card-tags">
+      <span class="tag-badge">{{tag_1}}</span>
+      <span class="tag-badge">{{tag_2}}</span>
+      <span class="tag-badge">{{tag_3}}</span>
+      <span class="tag-badge">{{tag_4}}</span>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="card-footer">
+    <a class="info-link" href="https://www.facebook.com/tui.la.phuc747/">
+      FB: Tiếng Hàn Phúc Lee
+    </a>
+  </footer>
+</div>
+
+<!-- NÚT CÀI ĐẶT -->
+<button id="btnSettings" class="btn-settings" onclick="toggleSettings(event)">
+  <svg viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg>
+</button>
+
+<!-- MENU CÀI ĐẶT -->
+<div class="settings-menu" id="settingsMenu">
+  <div class="menu-item">
+    <span class="menu-label">Chế độ tối</span>
+    <div class="toggle-switch" id="swNight" onclick="toggleConfig('nightMode')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Dịch ví dụ</span>
+    <div class="toggle-switch checked" id="swTrans" onclick="toggleConfig('showTrans')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Ví dụ</span>
+    <div class="toggle-switch checked" id="swExample" onclick="toggleConfig('showExample')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Giải thích</span>
+    <div class="toggle-switch checked" id="swExplain" onclick="toggleConfig('showExplain')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Mở rộng</span>
+    <div class="toggle-switch checked" id="swExpand" onclick="toggleConfig('autoExpand')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Hiện ảnh</span>
+    <div class="toggle-switch checked" id="swImage" onclick="toggleConfig('showImage')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Hiện Tags</span>
+    <div class="toggle-switch checked" id="swTags" onclick="toggleConfig('showTags')"></div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-label">Link FB (Footer)</span>
+    <div class="toggle-switch checked" id="swFb" onclick="toggleConfig('showFb')"></div>
+  </div>
+  <a href="https://www.facebook.com/tui.la.phuc747/" class="menu-link">Ghé thăm FB Phúc Lee</a>
+</div>
+
+<!-- MODAL ẢNH -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+  <div id="modalImgContainer"></div>
+</div>
+
+<script>
+// --- CONFIGURATION & STATE MANAGEMENT ---
+var defaultConfig = {
+  nightMode: false,
+  showTrans: true,
+  showExample: true,
+  showExplain: true,
+  autoExpand: true,
+  showImage: true,
+  showTags: true,
+  showFb: true
+};
+
+var config = {};
+
+function loadConfig() {
+  try {
+    var stored = localStorage.getItem('anki-card-config');
+    if (stored) {
+      config = JSON.parse(stored);
+      // Merge with defaults for any missing keys
+      for (var key in defaultConfig) {
+        if (config[key] === undefined) {
+          config[key] = defaultConfig[key];
+        }
+      }
+    } else {
+      // First time - use defaults and save
+      config = JSON.parse(JSON.stringify(defaultConfig));
+      saveConfig();
+    }
+  } catch (e) {
+    console.log('Error loading config:', e);
+    config = JSON.parse(JSON.stringify(defaultConfig));
+  }
+  applyConfig();
+}
+
+function saveConfig() {
+  try {
+    localStorage.setItem('anki-card-config', JSON.stringify(config));
+  } catch (e) {
+    console.log('Error saving config:', e);
+  }
+}
+
+function applyConfig() {
+  // 1. Night Mode
+  document.body.classList.toggle('night-mode', config.nightMode);
+  updateSwitch('swNight', config.nightMode);
+
+  // 2. Show Translation
+  document.body.classList.toggle('hide-trans', !config.showTrans);
+  updateSwitch('swTrans', config.showTrans);
+
+  // 3. Show Example
+  document.body.classList.toggle('hide-example', !config.showExample);
+  updateSwitch('swExample', config.showExample);
+
+  // 4. Show Explanation
+  document.body.classList.toggle('hide-explain', !config.showExplain);
+  updateSwitch('swExplain', config.showExplain);
+
+  // 5. Auto Expand
+  var details = document.getElementById('expandDetails');
+  if(details) {
+    if(config.autoExpand) details.setAttribute('open', '');
+    else details.removeAttribute('open');
+  }
+  updateSwitch('swExpand', config.autoExpand);
+
+  // 5. Show Image
+  document.body.classList.toggle('hide-image', !config.showImage);
+  updateSwitch('swImage', config.showImage);
+
+  // 6. Show Tags
+  document.body.classList.toggle('hide-tags-card', !config.showTags);
+  updateSwitch('swTags', config.showTags);
+  
+  // 7. Show FB Link
+  document.body.classList.toggle('hide-fb', !config.showFb);
+  updateSwitch('swFb', config.showFb);
+}
+
+function updateSwitch(id, isActive) {
+  var el = document.getElementById(id);
+  if(el) {
+    if(isActive) el.classList.add('checked');
+    else el.classList.remove('checked');
+  }
+}
+
+function toggleConfig(key) {
+  config[key] = !config[key];
+  saveConfig();
+  applyConfig();
+}
+
+// --- MODAL LOGIC ---
+function openImageModal(el) {
+  var img = el.querySelector('img');
+  if (img) {
+    var modal = document.getElementById('image-modal');
+    var modalImg = document.getElementById('modal-image');
+    modalImg.src = img.src;
+    modal.classList.add('active');
+  }
+}
+
+function closeImageModal() {
+  document.getElementById('image-modal').classList.remove('active');
+}
+
+function openModal(element) {
+  var img = element.querySelector('img');
+  if (img) {
+    var modal = document.getElementById('imgModal');
+    var container = document.getElementById('modalImgContainer');
+    container.innerHTML = ''; 
+    var clone = img.cloneNode(true);
+    container.appendChild(clone);
+    modal.classList.add('active');
+  }
+}
+
+function closeModal() {
+  document.getElementById('imgModal').classList.remove('active');
+}
+
+// --- SETTINGS MENU LOGIC ---
+function toggleSettings(e) {
+  e.stopPropagation();
+  var menu = document.getElementById('settingsMenu');
+  menu.classList.toggle('active');
+}
+
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('settingsMenu');
+  var btn = document.getElementById('btnSettings');
+  
+  if (menu && menu.classList.contains('active')) {
+    if (!menu.contains(e.target) && btn && !btn.contains(e.target)) {
+      menu.classList.remove('active');
+    }
+  }
+});
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeImageModal();
+    closeModal();
+    var menu = document.getElementById('settingsMenu');
+    if(menu) menu.classList.remove('active');
+  }
+});
+
+// Init
+loadConfig();
+</script>
+
+<script role='smarterTypeField' src="_smarterTypeField.min2024-11-28_02-08-05.js" data-config="2025-11-19_17-35-31"></script>
