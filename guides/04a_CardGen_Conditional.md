@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -98,4 +98,3 @@ Nếu bạn muốn chắc chắn card chỉ được tạo nếu có đáp án (
 ---
 
 ### ⬅️ [Bài trước: Card Generation Cơ Bản](./04_CardGen_Basics.md) | [Bài tiếp theo: Cloze Templates](./04b_CardGen_Cloze.md) ➡️
-

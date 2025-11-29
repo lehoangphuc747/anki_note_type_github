@@ -6,6 +6,32 @@ Repository chia sẻ template Anki và tài liệu hướng dẫn học thiết 
 
 ---
 
+## ⚠️ Lưu Ý: Phần Mềm Cần Cài Đặt Trước
+
+Trước khi bắt đầu học thiết kế card templates, bạn cần chuẩn bị các công cụ sau:
+
+### 📝 Editor & Công Cụ Phát Triển
+
+- **[Visual Studio Code (VS Code)](https://code.visualstudio.com/)** - Editor code miễn phí, khuyên dùng để chỉnh sửa templates
+- **[Anki Editor Extension](https://marketplace.visualstudio.com/items?itemName=pedro-bronsveld.anki-editor)** - Extension cho VS Code để hỗ trợ chỉnh sửa Anki templates với syntax highlighting
+
+### 🔐 Tài Khoản Cần Thiết
+
+- **Tài khoản GitHub** - Để sử dụng GitHub Copilot (AI coding assistant)
+- **Tài khoản Google** - Để sử dụng AI Studio (công cụ AI miễn phí từ Google)
+
+### 🔌 Anki Addons (Quan Trọng)
+
+Cài đặt các addons sau trong Anki để hỗ trợ việc phát triển và test templates:
+
+1. **[Add-on 31746032](https://ankiweb.net/shared/info/31746032)** - (Xem mô tả addon tại link)
+2. **[Add-on 2055492159](https://ankiweb.net/shared/info/2055492159)** - (Xem mô tả addon tại link)
+3. **[Add-on 571150035](https://ankiweb.net/shared/info/571150035)** - (Xem mô tả addon tại link)
+
+> 💡 **Hướng dẫn cài addon**: Vào Anki → Tools → Add-ons → Get Add-ons → Nhập code số (ví dụ: `31746032`) → OK
+
+---
+
 ## 📚 Lộ Trình Học Thiết Kế Card
 
 Các bài hướng dẫn đã được phân loại chi tiết trong thư mục `guides`. Nếu bạn mới bắt đầu, hãy học theo thứ tự này:
@@ -40,6 +66,7 @@ Các bài hướng dẫn đã được phân loại chi tiết trong thư mục 
 - **[Template Mẫu (2026)](./%28Anki%29%20Template%20h%E1%BB%8Dc%20t%E1%BB%AB%20v%E1%BB%B1ng%20c%E1%BB%A7a%20Admin%20Ph%C3%BAc%20%5B2026%5D/README.md)** - Template học từ vựng có sẵn
 - **[Phong Cách UI](./Tools_UI.md)** - Gợi ý phong cách thiết kế
 - **[Công Cụ AI](./Tools_AI.md)** - Cách dùng AI để tạo template
+- **[AnkiEco Templates](https://github.com/ikkz/anki-eco)** - Nguồn template tối giản, hiện đại và ấn tượng
 
 ---
 

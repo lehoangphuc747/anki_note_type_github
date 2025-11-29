@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 **Nguồn**: [Anki Manual - Templates](https://docs.ankiweb.net/templates/fields.html)
 
@@ -33,7 +33,7 @@ Từ vựng: Hello
 Tags: basic, greeting, common
 ```
 
-**Lưu ý**: Dùng `{{#Tags}}...{{/Tags}}` để chỉ hiển thị khi có tags (xem phần [Conditional Replacement](./01a_CardGeneration.md#conditional-replacement) trong Card Generation).
+**Lưu ý**: Dùng `{{#Tags}}...{{/Tags}}` để chỉ hiển thị khi có tags (xem phần [Conditional Replacement](./04a_CardGen_Conditional.md#conditional-replacement) trong Card Generation).
 
 ---
 
@@ -165,7 +165,7 @@ Deck: English::Vocabulary
 > ⚠️ **Lưu ý quan trọng**: 
 > - `{{FrontSide}}` **không tự động** phát audio từ mặt trước
 > - Nếu bạn có `{{tts en_US:Front}}` trên front template, nó sẽ **không** tự động phát trên back
-> - Muốn audio phát cả hai mặt? Thêm lại TTS vào back template (xem [TTS Guide](./04_TTS.md))
+> - Muốn audio phát cả hai mặt? Thêm lại TTS vào back template (xem [TTS Guide](./05_TTS.md))
 
 ---
 

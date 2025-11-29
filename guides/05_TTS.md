@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 **Nguồn**: [Anki Manual - Templates](https://docs.ankiweb.net/templates/fields.html)
 
@@ -130,4 +130,4 @@ This is other text on the template. It is outside of the tags so it should not b
 
 ---
 
-### ⬅️ [Bài trước: Cloze Templates](./04b_CardGen_Cloze.md) | [Bài tiếp theo: Styling & HTML](./06_Styling.md) ➡️
+### ⬅️ [Bài trước: Cloze Templates](./04b_CardGen_Cloze.md) | [Bài tiếp theo: Styling & HTML](./06_Styling_Basics.md) ➡️

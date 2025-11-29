@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -61,4 +61,3 @@ Khi người dùng bật Night Mode, Anki sẽ thêm class `.nightMode` vào car
 ---
 
 ### ⬅️ [Bài trước: Styling Nâng Cao](./06a_Styling_Advanced.md) | [Bài tiếp theo: Cài đặt Fonts](./06c_Styling_Fonts.md) ➡️
-

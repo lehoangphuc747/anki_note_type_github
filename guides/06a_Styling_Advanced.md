@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -74,4 +74,3 @@ Nếu card templates quá phức tạp, cột Question/Answer trong Browser sẽ
 ---
 
 ### ⬅️ [Bài trước: Styling Cơ Bản](./06_Styling_Basics.md) | [Bài tiếp theo: Platform & Night Mode](./06b_Styling_Platform.md) ➡️
-

@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -53,4 +53,3 @@ Bây giờ bạn có thể dùng tên font bạn vừa đặt ("MyCustomFont") c
 ---
 
 ### ⬅️ [Bài trước: Platform & Night Mode](./06b_Styling_Platform.md) | [Bài tiếp theo: Javascript](./06d_Styling_JS.md) ➡️
-

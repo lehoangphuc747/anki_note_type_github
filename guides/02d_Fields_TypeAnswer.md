@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -99,4 +99,3 @@ Thay `type:` bằng `type:nc:` (nc = no check accents).
 ---
 
 ### ⬅️ [Bài trước: Hỗ Trợ Ngôn Ngữ](./02c_Fields_Language.md) | [Bài tiếp theo: Special Fields](./03_SpecialFields.md) ➡️
-

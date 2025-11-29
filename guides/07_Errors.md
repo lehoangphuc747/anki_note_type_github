@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 **Nguồn**: [Anki Manual - Checks and Errors](https://docs.ankiweb.net/templates/errors.html)
 
@@ -81,9 +81,43 @@ Loại lỗi này chỉ ra việc sử dụng không đúng cú pháp [field rep
 
 #### ❌ Missing {{/Field}}
 
-**Nguyên nhân**: Anki tìm thấy `{{#Field}}` hoặc `{{^Field}}` trong template mà không có `{{/Field}}` tương ứng.
+**Nguyên nhân**: Anki tìm thấy `{{#Field}}` hoặc `{{^Field}}` trong template mà không có `{{/Field}}` tương ứng để đóng lại.
 
-**Cách sửa**: Xóa `{{#Field}}` hoặc `{{^Field}}` khỏi template, hoặc thêm `{{/Field}}` đóng lại.
+**Conditional Replacement là gì?** 
+- `{{#Field}}` = "Nếu field này CÓ nội dung, hiển thị đoạn code bên trong"
+- `{{^Field}}` = "Nếu field này TRỐNG, hiển thị đoạn code bên trong"
+- `{{/Field}}` = Tag đóng, báo cho Anki biết kết thúc phần conditional
+
+**Ví dụ lỗi:**
+
+❌ **Sai** - Thiếu tag đóng:
+```html
+{{Front}}
+
+{{#Tags}}
+<p>Tags: {{Tags}}</p>
+<!-- Quên thêm {{/Tags}} ở đây -->
+```
+
+✅ **Đúng** - Có tag đóng:
+```html
+{{Front}}
+
+{{#Tags}}
+<p>Tags: {{Tags}}</p>
+{{/Tags}}
+```
+
+**Giải thích chi tiết:**
+- Dòng `{{#Tags}}` mở ra một khối conditional: "Nếu có Tags..."
+- Nội dung bên trong (dòng `<p>Tags: {{Tags}}</p>`) chỉ hiển thị khi có tags
+- `{{/Tags}}` đóng khối conditional lại: "Kết thúc phần nếu có Tags"
+
+**Cách sửa**: 
+1. **Thêm tag đóng** nếu bạn muốn giữ conditional logic: Thêm `{{/Field}}` vào cuối phần nội dung
+2. **Xóa conditional** nếu bạn không cần logic điều kiện: Xóa cả `{{#Field}}` hoặc `{{^Field}}` và để nội dung hiển thị luôn
+
+> 💡 **Tham khảo thêm**: Xem bài [Conditional Replacement](./04a_CardGen_Conditional.md) để hiểu rõ hơn về cách dùng `{{#Field}}` và `{{^Field}}`.
 
 ---
 

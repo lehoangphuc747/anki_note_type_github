@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -45,4 +45,3 @@ Show Back</a><div id="hint4753594160" class=hint style="display: none">{{Back}}<
 ---
 
 ### ⬅️ [Bài trước: Field Replacements Cơ Bản](./02_Fields_Basics.md) | [Bài tiếp theo: Dictionary Links & Media](./02b_Fields_Links_Media.md) ➡️
-

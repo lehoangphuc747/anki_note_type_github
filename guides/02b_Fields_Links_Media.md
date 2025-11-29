@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -52,4 +52,3 @@ Nếu field của bạn có chứa định dạng (như **bold**, *italic*), lin
 ---
 
 ### ⬅️ [Bài trước: Hint Fields](./02a_Fields_Hint.md) | [Bài tiếp theo: Hỗ Trợ Ngôn Ngữ](./02c_Fields_Language.md) ➡️
-

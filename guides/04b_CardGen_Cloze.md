@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -44,4 +44,3 @@ Bạn có thể hiển thị nội dung khác nhau tùy thuộc vào việc card
 ---
 
 ### ⬅️ [Bài trước: Conditional Replacement](./04a_CardGen_Conditional.md) | [Bài tiếp theo: Text to Speech (TTS)](./05_TTS.md) ➡️
-

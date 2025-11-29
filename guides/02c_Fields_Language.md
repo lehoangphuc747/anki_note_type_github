@@ -2,7 +2,7 @@
 
 [← Quay lại Trang chủ](../README.md)
 
-**📅 Cập nhật lần cuối**: Tháng 1, 2025
+**📅 Cập nhật lần cuối**: 29/11/2025
 
 ---
 
@@ -40,4 +40,3 @@ Ví dụ: `日本語[にほんご]`
 ---
 
 ### ⬅️ [Bài trước: Dictionary Links & Media](./02b_Fields_Links_Media.md) | [Bài tiếp theo: Type Answer](./02d_Fields_TypeAnswer.md) ➡️
-
