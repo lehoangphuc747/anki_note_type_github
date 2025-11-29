@@ -1,6 +1,6 @@
 # 🧩 Cloze Templates (Điền Vào Chỗ Trống)
 
-[← Quay lại Trang chủ](./README.md)
+[← Quay lại Trang chủ](../README.md)
 
 **📅 Cập nhật lần cuối**: Tháng 1, 2025
 

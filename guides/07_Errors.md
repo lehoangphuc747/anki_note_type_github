@@ -1,6 +1,6 @@
 # ⚠️ Checks and Errors Trong Anki
 
-[← Quay lại Trang chủ](./README.md)
+[← Quay lại Trang chủ](../README.md)
 
 **📅 Cập nhật lần cuối**: Tháng 1, 2025
 
@@ -239,4 +239,17 @@ hoặc
 
 ---
 
-### ⬅️ [Bài trước: Styling & HTML](./06_Styling.md) | [Bài tiếp theo: Công cụ AI](./Tools_AI.md) ➡️
+## 📚 Tài Nguyên Liên Quan
+
+### 🔹 Xem lại các hướng dẫn:
+- **[Field Replacements](./02_Fields_Basics.md)** - Cú pháp fields cơ bản
+- **[Card Generation](./04_CardGen_Basics.md)** - Conditional Replacement và Card Generation
+- **[Styling & HTML](./06_Styling_Basics.md)** - CSS và HTML
+
+### 🔹 Tài nguyên hỗ trợ:
+- **[Công Cụ AI](../Tools_AI.md)** - Sử dụng AI khi gặp khó khăn
+- **[Anki Template Documentation](https://docs.ankiweb.net/templates/intro.html)** - Tài liệu chính thức
+
+---
+
+### ⬅️ [Bài trước: Javascript trong Anki](./06d_Styling_JS.md) | [Bài tiếp theo: Công cụ AI](../Tools_AI.md) ➡️

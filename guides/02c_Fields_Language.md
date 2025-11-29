@@ -1,6 +1,6 @@
 # 🌐 Hỗ Trợ Ngôn Ngữ (RTL & Furigana)
 
-[← Quay lại Trang chủ](./README.md)
+[← Quay lại Trang chủ](../README.md)
 
 **📅 Cập nhật lần cuối**: Tháng 1, 2025
 
