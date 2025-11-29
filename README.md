@@ -4,6 +4,12 @@
 
 ---
 
+## 🧭 Điều hướng nhanh
+
+> **📁 [Các Template](#-các-template-có-sẵn)** | **🎨 [Tài nguyên Thiết kế](#-tài-nguyên-thiết-kế)** | **🤖 [Công cụ AI](#-công-cụ-ai)**
+
+---
+
 Repository chứa các template Anki được thiết kế bởi Admin Phúc từ AnkiVN.
 
 ## 📁 Các template có sẵn
@@ -13,6 +19,10 @@ Repository chứa các template Anki được thiết kế bởi Admin Phúc t�
 ## 🎨 Tài nguyên thiết kế
 
 - **[Bảng Tổng Hợp Phong Cách Thiết Kế UI](./UI_STYLE_CATEGORIES.md)** - Tổng hợp các phong cách thiết kế UI phổ biến với từ khóa, màu sắc và hiệu ứng, hữu ích cho việc tùy chỉnh giao diện Anki cards
+
+## 🤖 Công cụ AI
+
+- **[Các AI Tools Để Tạo Anki Note Type Template](./AI_TOOLS_FOR_ANKI_TEMPLATES.md)** - Hướng dẫn sử dụng các công cụ AI (AI Studio, Claude, GPT, Gemini, Grok) để tạo và tùy chỉnh Anki templates hiệu quả
 
 ## 👤 Tác giả
 

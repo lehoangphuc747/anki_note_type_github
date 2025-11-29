@@ -4,6 +4,12 @@
 
 ---
 
+## 🧭 Quick Navigation
+
+> **📁 [Available Templates](#-available-templates)** | **👤 [Author](#-author)**
+
+---
+
 Repository containing Anki templates designed by Admin Phúc from AnkiVN.
 
 ## 📁 Available Templates
