@@ -215,4 +215,4 @@ Deck: English::Vocabulary
 
 ---
 
-### ⬅️ [Bài trước: Type Answer](./02d_Fields_TypeAnswer.md) | [Bài tiếp theo: Card Generation](./04_CardGeneration.md) ➡️
+### ⬅️ [Bài trước: Type Answer](./02d_Fields_TypeAnswer.md) | [Bài tiếp theo: Card Generation Cơ Bản](./04_CardGen_Basics.md) ➡️

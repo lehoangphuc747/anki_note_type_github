@@ -18,7 +18,9 @@ Nếu bạn mới bắt đầu, hãy học theo thứ tự này:
 - **[Language Support](./02c_Fields_Language.md)** - Hỗ trợ tiếng Nhật (Furigana) và RTL
 - **[Type Answer](./02d_Fields_TypeAnswer.md)** - Tính năng gõ và kiểm tra đáp án
 - **[Special Fields](./03_SpecialFields.md)** - Các field đặc biệt (Tags, Deck, Flag...)
-- **[Card Generation](./04_CardGeneration.md)** - Cách tạo card và Conditional Replacement
+- **[Card Generation (Cơ Bản)](./04_CardGen_Basics.md)** - Reverse Cards, Empty/Blank Cards
+- **[Conditional Replacement](./04a_CardGen_Conditional.md)** - Logic điều kiện `{{#Field}}`
+- **[Cloze Templates](./04b_CardGen_Cloze.md)** - Logic tạo card điền vào chỗ trống
 
 ### 2. Tính Năng
 - **[Text to Speech (TTS)](./05_TTS.md)** - Thêm giọng đọc tự động

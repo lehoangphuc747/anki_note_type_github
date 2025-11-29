@@ -130,4 +130,4 @@ This is other text on the template. It is outside of the tags so it should not b
 
 ---
 
-### ⬅️ [Bài trước: Card Generation](./04_CardGeneration.md) | [Bài tiếp theo: Styling & HTML](./06_Styling.md) ➡️
+### ⬅️ [Bài trước: Cloze Templates](./04b_CardGen_Cloze.md) | [Bài tiếp theo: Styling & HTML](./06_Styling.md) ➡️
